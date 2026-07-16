@@ -2,21 +2,11 @@
 
 <center> <h1> "Saudia Delivery" دراسة حالة واستشارات تشغيلية: تحسين الأداء اللوجستي للشركة </h1> </center>
 
-<br>
-
-<div align="center">
-  <a href="https://www.loom.com/share/72f0ca12df0141414e932bab44e414b7fb">
-    <img src="https://img.shields.io/badge/🎬_شاهد_شرح_المشروع_بالفيديو-Loom-blue?style=for-the-badge&logo=loom" alt="Watch Demo">
-  </a>
-</div>
-
-<br>
-
 ---
 
 ### 📥 روابط التحميل السريع ودليل التشغيل الآمن
 > [!NOTE]
-> 1. احفظ هنا تحميل ملف الأكسل التفاعلي مباشرة: [Saudia_Delivery_Dashboard.xlsm](./Saudia_Delivery_Dashboard.xlsm)
+> احفظ هنا تحميل ملف الأكسل التفاعلي مباشرة: [Saudia_Delivery_Dashboard.xlsm](./Saudia_Delivery_Dashboard.xlsm)
 >
 > ⚠️ **تنبيه أمني هام لتشغيل الأزرار التفاعلية (VBA Macros):**
 > نظراً لأن نظام Windows يقوم بحظر ملفات الماكرو المحملة من الإنترنت تلقائياً لمنع الأكواد الخارجية، يرجى اتباع هذه الخطوات البسيطة (لمرة واحدة فقط) لتفعيل الأزرار التفاعلية والبحث التلقائي بعد تحميل الملف:
