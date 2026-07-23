@@ -1,0 +1,1001 @@
+transaction_id,amount,Status,Payment_Method
+1,5501.04,Accepted,Mada
+2,3913.73,Rejected,Credit Card
+3,3071.38,Accepted,Mada
+4,5072.62,Rejected,Apple Pay
+5,364.89,Rejected,Apple Pay
+6,912.23,Rejected,Apple Pay
+7,5265.24,Rejected,Mada
+8,5648.74,Accepted,Credit Card
+9,6384.35,Rejected,Mada
+10,6068.17,Rejected,Mada
+11,2408.98,Accepted,Mada
+12,1389.63,Accepted,Mada
+13,3861.41,Rejected,STC Pay
+14,857.48,Accepted,STC Pay
+15,4088.13,Accepted,Mada
+16,3645.39,Rejected,Apple Pay
+17,592.78,Rejected,Credit Card
+18,3767.35,Accepted,Apple Pay
+19,7067.57,Accepted,Mada
+20,5989.48,Rejected,STC Pay
+21,6373.1,Accepted,Apple Pay
+22,4020.23,Rejected,Credit Card
+23,627.5,Accepted,Apple Pay
+24,6454.66,Accepted,STC Pay
+25,1829.81,Rejected,Credit Card
+26,6277.07,Rejected,Apple Pay
+27,4964.18,Accepted,Apple Pay
+28,3811.79,Accepted,Apple Pay
+29,5530.23,Rejected,STC Pay
+30,5974.53,Rejected,STC Pay
+31,1893.66,Rejected,STC Pay
+32,1185.16,Rejected,STC Pay
+33,4530.3,Rejected,Credit Card
+34,3837.68,Accepted,STC Pay
+35,5947.87,Rejected,Credit Card
+36,7691.7,Accepted,Apple Pay
+37,7493.51,Rejected,STC Pay
+38,6124.64,Accepted,Credit Card
+39,7489.83,Accepted,STC Pay
+40,4903.65,Rejected,Mada
+41,6038.83,Accepted,Mada
+42,2622.67,Rejected,Credit Card
+43,1235.3,Rejected,Credit Card
+44,5984.87,Rejected,Credit Card
+45,7715.56,Accepted,Mada
+46,6414.4,Rejected,STC Pay
+47,1340.63,Accepted,Mada
+48,889.77,Rejected,STC Pay
+49,5193.83,Accepted,Mada
+50,4624.85,Accepted,STC Pay
+51,7058.33,Accepted,Mada
+52,7709.91,Accepted,Apple Pay
+53,6856.91,Accepted,Apple Pay
+54,5306.2,Accepted,Mada
+55,3562.68,Rejected,Apple Pay
+56,2812.44,Rejected,Apple Pay
+57,2909.03,Rejected,STC Pay
+58,6474.36,Accepted,Apple Pay
+59,3987.5,Accepted,STC Pay
+60,7775.64,Rejected,Apple Pay
+61,2091.76,Accepted,Credit Card
+62,124.34,Rejected,Apple Pay
+63,4884.7,Accepted,STC Pay
+64,2834.65,Rejected,STC Pay
+65,4985.66,Rejected,Credit Card
+66,3505.92,Rejected,STC Pay
+67,1140.42,Accepted,STC Pay
+68,2838.6,Rejected,STC Pay
+69,5933.94,Accepted,STC Pay
+70,1307.41,Accepted,Credit Card
+71,7709.63,Accepted,STC Pay
+72,3524.49,Rejected,Credit Card
+73,657.41,Rejected,Mada
+74,324.66,Rejected,STC Pay
+75,2320.1,Accepted,Credit Card
+76,5524.14,Rejected,Mada
+77,3928.35,Rejected,Apple Pay
+78,7168.06,Rejected,Apple Pay
+79,6025.02,Rejected,Credit Card
+80,1863.7,Accepted,Apple Pay
+81,7136.16,Accepted,Mada
+82,6002.75,Rejected,Mada
+83,7735.92,Accepted,Credit Card
+84,3563.14,Rejected,Apple Pay
+85,3077.05,Rejected,STC Pay
+86,4270.07,Accepted,STC Pay
+87,1521.62,Rejected,STC Pay
+88,1680.14,Accepted,Credit Card
+89,3360.43,Rejected,Apple Pay
+90,3784.09,Rejected,Mada
+91,7675.94,Rejected,Credit Card
+92,5985.95,Accepted,Credit Card
+93,4116.91,Rejected,Apple Pay
+94,3198.51,Rejected,STC Pay
+95,6755.68,Rejected,Mada
+96,7049.67,Rejected,Mada
+97,667.07,Accepted,STC Pay
+98,1210.22,Accepted,Mada
+99,5417.92,Accepted,Credit Card
+100,3173,Rejected,STC Pay
+101,6926.19,Rejected,Credit Card
+102,6599.31,Rejected,Mada
+103,6843.46,Accepted,STC Pay
+104,1913.23,Accepted,Credit Card
+105,4689.93,Rejected,Mada
+106,6118.45,Rejected,STC Pay
+107,7953.83,Rejected,STC Pay
+108,2187.95,Accepted,Mada
+109,4745.84,Rejected,Mada
+110,3738.73,Rejected,STC Pay
+111,3145.55,Accepted,Credit Card
+112,7552.71,Rejected,STC Pay
+113,330.11,Rejected,Apple Pay
+114,3848.86,Accepted,STC Pay
+115,5317.34,Rejected,STC Pay
+116,2940.52,Rejected,STC Pay
+117,3389.32,Rejected,Mada
+118,1935.64,Accepted,STC Pay
+119,5858.79,Accepted,Apple Pay
+120,1692.64,Rejected,Credit Card
+121,4567.66,Accepted,Mada
+122,7262.42,Accepted,STC Pay
+123,3922.98,Accepted,Mada
+124,6102.52,Accepted,Apple Pay
+125,7864.99,Rejected,STC Pay
+126,2157.15,Rejected,STC Pay
+127,703.46,Accepted,Mada
+128,1238.37,Accepted,Credit Card
+129,6000.27,Rejected,Credit Card
+130,3166.66,Rejected,Mada
+131,3196.99,Accepted,Credit Card
+132,6590.06,Rejected,Mada
+133,1757.44,Accepted,STC Pay
+134,1074.48,Rejected,Apple Pay
+135,5578.81,Rejected,Mada
+136,338.2,Accepted,Credit Card
+137,847.54,Accepted,STC Pay
+138,88.85,Rejected,STC Pay
+139,2326.77,Rejected,STC Pay
+140,835.29,Rejected,Apple Pay
+141,2936.58,Accepted,Mada
+142,7306.94,Rejected,Credit Card
+143,5085.89,Accepted,STC Pay
+144,4032.97,Rejected,Apple Pay
+145,6304.36,Accepted,Mada
+146,1341.64,Accepted,Mada
+147,2863.39,Rejected,Apple Pay
+148,1273.71,Accepted,Credit Card
+149,7445.94,Rejected,STC Pay
+150,5416.14,Rejected,Mada
+151,818.04,Accepted,Credit Card
+152,3371.02,Rejected,Apple Pay
+153,6299.37,Accepted,Apple Pay
+154,7742.91,Rejected,Mada
+155,4751.2,Accepted,Credit Card
+156,1624.4,Rejected,Mada
+157,3174.81,Accepted,STC Pay
+158,6721.84,Rejected,Credit Card
+159,6139.38,Accepted,Mada
+160,7769.78,Accepted,Mada
+161,1243.26,Accepted,Apple Pay
+162,7583.67,Rejected,Mada
+163,2303.95,Rejected,Apple Pay
+164,1846.84,Accepted,Apple Pay
+165,1838.5,Accepted,Credit Card
+166,3763.76,Rejected,Apple Pay
+167,3966.27,Rejected,Mada
+168,4406.15,Rejected,STC Pay
+169,232.6,Accepted,Apple Pay
+170,1197.86,Rejected,Credit Card
+171,1798.8,Accepted,STC Pay
+172,622.61,Accepted,Mada
+173,4576.23,Accepted,Mada
+174,1329.28,Rejected,Apple Pay
+175,3402.43,Rejected,Credit Card
+176,2220.54,Accepted,Mada
+177,1257.38,Rejected,Mada
+178,4603.44,Rejected,Apple Pay
+179,2803.79,Accepted,STC Pay
+180,3455.47,Accepted,Credit Card
+181,916.01,Rejected,Credit Card
+182,6335.85,Rejected,Credit Card
+183,4231.52,Rejected,Credit Card
+184,247.77,Rejected,Credit Card
+185,3302.5,Accepted,STC Pay
+186,6940.37,Accepted,Credit Card
+187,2671.15,Accepted,Mada
+188,5340.76,Accepted,Credit Card
+189,958.06,Accepted,Credit Card
+190,783.95,Rejected,Mada
+191,1775.74,Accepted,Apple Pay
+192,2154.62,Rejected,Mada
+193,2275.57,Accepted,Apple Pay
+194,5644.48,Rejected,Mada
+195,7315.51,Rejected,Apple Pay
+196,2528.67,Accepted,Credit Card
+197,724.16,Accepted,Mada
+198,2840.52,Rejected,STC Pay
+199,230.21,Rejected,STC Pay
+200,4290.94,Rejected,Apple Pay
+201,597.43,Accepted,STC Pay
+202,6380.52,Accepted,Credit Card
+203,6236.78,Rejected,STC Pay
+204,4720.75,Rejected,Apple Pay
+205,2338.1,Accepted,Apple Pay
+206,7490.42,Rejected,Credit Card
+207,3183.27,Rejected,Mada
+208,569.79,Rejected,Credit Card
+209,2090.16,Accepted,Credit Card
+210,5457.78,Accepted,Mada
+211,6584.02,Rejected,Apple Pay
+212,98.37,Accepted,Credit Card
+213,5608.56,Accepted,STC Pay
+214,4428.1,Rejected,Apple Pay
+215,1160,Rejected,STC Pay
+216,1841.45,Rejected,Apple Pay
+217,2315.98,Accepted,Credit Card
+218,3564.01,Rejected,Mada
+219,6378.4,Accepted,Mada
+220,7885.05,Accepted,Mada
+221,3208.26,Accepted,Credit Card
+222,3992.02,Accepted,STC Pay
+223,6819.14,Accepted,STC Pay
+224,5792.61,Rejected,Mada
+225,4922.63,Accepted,STC Pay
+226,5066.51,Rejected,STC Pay
+227,6716.55,Rejected,STC Pay
+228,5196.14,Accepted,Mada
+229,329.47,Accepted,Mada
+230,6575.08,Rejected,STC Pay
+231,113.08,Accepted,STC Pay
+232,2449.93,Rejected,STC Pay
+233,613.69,Rejected,Credit Card
+234,2114.2,Rejected,STC Pay
+235,5645.3,Accepted,Apple Pay
+236,2904.11,Rejected,Credit Card
+237,5406.85,Accepted,Mada
+238,371.56,Rejected,Mada
+239,7855.42,Rejected,STC Pay
+240,2726.22,Accepted,Mada
+241,3731.06,Rejected,STC Pay
+242,5739.29,Rejected,Credit Card
+243,6824.28,Accepted,Credit Card
+244,4630.52,Accepted,STC Pay
+245,5852.77,Accepted,STC Pay
+246,2648.95,Accepted,Apple Pay
+247,2204.72,Accepted,Mada
+248,6515.65,Accepted,Mada
+249,2913.41,Rejected,Credit Card
+250,1845.43,Accepted,Credit Card
+251,4242.56,Accepted,STC Pay
+252,5049.78,Accepted,Mada
+253,1585.54,Accepted,Credit Card
+254,2264.59,Rejected,Mada
+255,3696.17,Rejected,Mada
+256,2890.88,Accepted,Apple Pay
+257,3085.07,Rejected,Credit Card
+258,6873.68,Accepted,STC Pay
+259,6423.99,Accepted,Credit Card
+260,5464.3,Rejected,Apple Pay
+261,5518.83,Rejected,STC Pay
+262,3595.3,Rejected,Apple Pay
+263,7801.76,Accepted,STC Pay
+264,3883.46,Rejected,Credit Card
+265,5578.68,Rejected,STC Pay
+266,6958.39,Accepted,STC Pay
+267,963.36,Accepted,Apple Pay
+268,6090.86,Accepted,STC Pay
+269,6975.97,Rejected,STC Pay
+270,7650.51,Rejected,Mada
+271,5281.26,Accepted,Apple Pay
+272,1479.04,Accepted,Apple Pay
+273,3058.87,Accepted,Credit Card
+274,1968.27,Accepted,Mada
+275,661.24,Rejected,STC Pay
+276,6150.55,Accepted,Mada
+277,4449.08,Accepted,Apple Pay
+278,3410.95,Rejected,Mada
+279,7117.85,Accepted,Apple Pay
+280,6968.52,Accepted,Mada
+281,1629.6,Rejected,STC Pay
+282,3455.53,Rejected,Apple Pay
+283,6425.75,Rejected,STC Pay
+284,6235.57,Accepted,Credit Card
+285,5352.08,Accepted,Apple Pay
+286,869.15,Rejected,Credit Card
+287,3197.56,Accepted,Apple Pay
+288,4112.07,Accepted,Apple Pay
+289,1784.18,Accepted,STC Pay
+290,3255.22,Rejected,Credit Card
+291,4712.14,Rejected,STC Pay
+292,1022.31,Rejected,Mada
+293,6889.93,Accepted,Mada
+294,1594.79,Rejected,Credit Card
+295,5444.02,Accepted,Apple Pay
+296,7966.96,Accepted,STC Pay
+297,2950.73,Accepted,Credit Card
+298,5263.23,Accepted,Mada
+299,95.2,Rejected,Apple Pay
+300,7623.08,Rejected,STC Pay
+301,3937.34,Accepted,Mada
+302,5339.3,Rejected,Credit Card
+303,3979.8,Rejected,Credit Card
+304,1070.66,Rejected,Apple Pay
+305,1791.37,Rejected,STC Pay
+306,4340.17,Rejected,Credit Card
+307,5063.44,Accepted,Mada
+308,1929.33,Accepted,Apple Pay
+309,7572.02,Accepted,Mada
+310,588.06,Accepted,Credit Card
+311,7905.76,Rejected,Credit Card
+312,2835.69,Rejected,Apple Pay
+313,2357.17,Accepted,Mada
+314,5531.9,Rejected,Credit Card
+315,2920.57,Accepted,Apple Pay
+316,2026.94,Accepted,Credit Card
+317,436.45,Accepted,Mada
+318,7652.14,Accepted,Apple Pay
+319,1189.15,Rejected,Apple Pay
+320,1471.58,Rejected,Mada
+321,2004.71,Accepted,Apple Pay
+322,3674.04,Accepted,STC Pay
+323,2074.73,Accepted,Credit Card
+324,6088.62,Accepted,Credit Card
+325,5508.48,Rejected,Mada
+326,5788.78,Rejected,STC Pay
+327,2265.09,Accepted,Apple Pay
+328,6715.96,Rejected,Credit Card
+329,3953.57,Accepted,Credit Card
+330,4197.17,Accepted,Credit Card
+331,6002.53,Rejected,STC Pay
+332,2049.45,Rejected,Mada
+333,69.56,Accepted,STC Pay
+334,805.68,Rejected,Apple Pay
+335,5463.76,Rejected,Credit Card
+336,67.42,Rejected,Apple Pay
+337,6759.69,Accepted,Credit Card
+338,6925.01,Accepted,Apple Pay
+339,2296.79,Accepted,Mada
+340,1407.5,Rejected,Credit Card
+341,1730.67,Rejected,Mada
+342,5716.84,Rejected,Credit Card
+343,496.32,Accepted,Mada
+344,6318.24,Rejected,Credit Card
+345,3988.49,Rejected,Credit Card
+346,5466.76,Accepted,Apple Pay
+347,4890.8,Accepted,Credit Card
+348,2955.29,Accepted,Credit Card
+349,1034.12,Rejected,Apple Pay
+350,6674.4,Accepted,STC Pay
+351,7599.3,Accepted,STC Pay
+352,4394.22,Accepted,STC Pay
+353,3602.76,Accepted,Credit Card
+354,3987.03,Accepted,STC Pay
+355,5986.53,Accepted,STC Pay
+356,4298.91,Rejected,Credit Card
+357,7182.33,Rejected,STC Pay
+358,6365.95,Rejected,Mada
+359,1084.86,Rejected,Mada
+360,4499.36,Accepted,Mada
+361,1848.96,Rejected,Credit Card
+362,4689.18,Accepted,Mada
+363,7997.65,Rejected,Mada
+364,4673.95,Accepted,Mada
+365,215.49,Accepted,Apple Pay
+366,1849.8,Rejected,STC Pay
+367,2840.33,Accepted,Apple Pay
+368,2032.47,Rejected,Mada
+369,7523.02,Rejected,Mada
+370,2440.49,Accepted,Mada
+371,2221.04,Rejected,STC Pay
+372,1631.78,Accepted,Apple Pay
+373,3340.47,Rejected,Credit Card
+374,5081.72,Accepted,STC Pay
+375,530.69,Rejected,Apple Pay
+376,3883.64,Rejected,STC Pay
+377,4633.62,Accepted,Credit Card
+378,4305.59,Accepted,Mada
+379,1616.67,Rejected,Apple Pay
+380,1286.42,Accepted,Credit Card
+381,2015.96,Rejected,Mada
+382,6206.49,Rejected,Credit Card
+383,7004.94,Rejected,Mada
+384,1016.61,Accepted,Apple Pay
+385,1268,Accepted,Apple Pay
+386,3054.84,Rejected,Credit Card
+387,6086.42,Rejected,Credit Card
+388,5415.59,Rejected,Apple Pay
+389,1394.33,Rejected,Mada
+390,633.09,Accepted,Credit Card
+391,7005.01,Accepted,STC Pay
+392,6355.4,Rejected,Credit Card
+393,295.29,Accepted,Apple Pay
+394,3687.51,Accepted,Apple Pay
+395,3512.49,Rejected,Apple Pay
+396,7603.69,Rejected,Apple Pay
+397,93.17,Accepted,Mada
+398,3696.97,Accepted,Credit Card
+399,4098.45,Accepted,Apple Pay
+400,2298.48,Accepted,Credit Card
+401,5940.14,Accepted,Apple Pay
+402,6611.68,Accepted,STC Pay
+403,2621.07,Rejected,Credit Card
+404,2091.59,Accepted,Apple Pay
+405,7192.58,Rejected,Apple Pay
+406,2828.42,Accepted,Apple Pay
+407,2993.92,Rejected,Mada
+408,7389.78,Accepted,Credit Card
+409,880.17,Rejected,Apple Pay
+410,3651.73,Accepted,STC Pay
+411,7689.37,Accepted,Apple Pay
+412,5924.05,Rejected,Apple Pay
+413,2937.6,Rejected,Apple Pay
+414,722.5,Accepted,STC Pay
+415,2392.6,Rejected,STC Pay
+416,7375.16,Rejected,STC Pay
+417,3647.1,Rejected,Apple Pay
+418,1096.8,Accepted,STC Pay
+419,3168.83,Accepted,STC Pay
+420,2258.39,Accepted,Mada
+421,998.13,Accepted,Mada
+422,3619.79,Rejected,Mada
+423,3631.1,Accepted,STC Pay
+424,7477.76,Rejected,Apple Pay
+425,6556.78,Accepted,Credit Card
+426,4254.95,Rejected,Mada
+427,5509.69,Rejected,Apple Pay
+428,2294.89,Accepted,Mada
+429,901.11,Rejected,Credit Card
+430,185.55,Accepted,Credit Card
+431,5475.26,Accepted,Credit Card
+432,2340.81,Rejected,Credit Card
+433,6942.22,Accepted,Apple Pay
+434,3585.94,Rejected,Credit Card
+435,2998.48,Accepted,Mada
+436,3217.88,Rejected,Apple Pay
+437,4509.33,Accepted,STC Pay
+438,4273.47,Accepted,Mada
+439,6464.52,Accepted,Apple Pay
+440,92.85,Rejected,STC Pay
+441,6578.77,Accepted,Mada
+442,2972.71,Accepted,Apple Pay
+443,5921.67,Accepted,STC Pay
+444,5874.12,Accepted,Mada
+445,1485.82,Accepted,Mada
+446,1394.44,Rejected,Credit Card
+447,964.92,Accepted,Credit Card
+448,3804.41,Rejected,Credit Card
+449,2193.89,Accepted,STC Pay
+450,7716.13,Accepted,Mada
+451,6973.29,Accepted,Mada
+452,7283.26,Rejected,Credit Card
+453,7435.35,Accepted,STC Pay
+454,2797.11,Accepted,Apple Pay
+455,112.65,Rejected,Apple Pay
+456,1434.66,Accepted,Credit Card
+457,3726.9,Rejected,Mada
+458,3949.1,Accepted,Credit Card
+459,2606.2,Rejected,Credit Card
+460,4110.82,Accepted,Mada
+461,2983.03,Accepted,Credit Card
+462,2536.55,Rejected,Apple Pay
+463,1748.76,Accepted,Mada
+464,892.9,Rejected,STC Pay
+465,2472.29,Accepted,Apple Pay
+466,2249.14,Accepted,Mada
+467,1254.59,Accepted,Apple Pay
+468,4023.2,Accepted,Mada
+469,7303.73,Accepted,STC Pay
+470,4764.39,Accepted,STC Pay
+471,753.6,Rejected,Credit Card
+472,5277.02,Accepted,Credit Card
+473,2089.19,Rejected,Mada
+474,2884.79,Rejected,Credit Card
+475,2614.49,Rejected,STC Pay
+476,1671.56,Rejected,Credit Card
+477,7764.28,Accepted,STC Pay
+478,6501.26,Rejected,STC Pay
+479,5489.75,Rejected,Credit Card
+480,428.31,Accepted,Apple Pay
+481,7356.52,Rejected,STC Pay
+482,5971.05,Rejected,STC Pay
+483,5635.17,Rejected,STC Pay
+484,6410.86,Rejected,Credit Card
+485,2483.03,Accepted,Credit Card
+486,914.07,Rejected,Credit Card
+487,4049.89,Rejected,STC Pay
+488,7615.59,Rejected,Apple Pay
+489,7323.23,Accepted,Mada
+490,1755.85,Accepted,STC Pay
+491,6089.65,Accepted,STC Pay
+492,2382.49,Rejected,STC Pay
+493,3524.11,Accepted,Mada
+494,5772.83,Accepted,Mada
+495,799.32,Accepted,Mada
+496,3611.61,Accepted,Credit Card
+497,2060.98,Rejected,Mada
+498,5119.55,Accepted,Credit Card
+499,185.63,Rejected,Credit Card
+500,4263.07,Accepted,Mada
+501,5212.13,Accepted,Mada
+502,2850.59,Accepted,Mada
+503,77.08,Accepted,Credit Card
+504,6576.54,Accepted,STC Pay
+505,4006.13,Accepted,STC Pay
+506,4539.21,Rejected,Credit Card
+507,2212.13,Accepted,Credit Card
+508,3241.45,Accepted,STC Pay
+509,5928.84,Rejected,STC Pay
+510,1427.58,Accepted,Mada
+511,7388.56,Accepted,Apple Pay
+512,876.68,Rejected,STC Pay
+513,5453.68,Rejected,Credit Card
+514,2210.41,Rejected,Credit Card
+515,989.33,Rejected,STC Pay
+516,7489.64,Accepted,Apple Pay
+517,4955.16,Rejected,Mada
+518,7167.62,Accepted,Credit Card
+519,6011.61,Rejected,Credit Card
+520,6253.69,Accepted,Mada
+521,7783.34,Accepted,STC Pay
+522,5260.72,Accepted,STC Pay
+523,6712.71,Accepted,Credit Card
+524,3325.39,Rejected,Credit Card
+525,1178.69,Accepted,Mada
+526,4418.25,Rejected,STC Pay
+527,2489.59,Accepted,STC Pay
+528,853.15,Accepted,STC Pay
+529,1206.72,Rejected,Mada
+530,5509.68,Accepted,Mada
+531,3423.51,Accepted,Mada
+532,7028.62,Rejected,Credit Card
+533,5213.87,Accepted,Credit Card
+534,7844.11,Accepted,Mada
+535,5363.89,Accepted,STC Pay
+536,4614.62,Rejected,Mada
+537,3495.12,Accepted,Credit Card
+538,7609.4,Rejected,STC Pay
+539,2471.1,Accepted,Apple Pay
+540,2075.37,Rejected,Mada
+541,5003.55,Rejected,Credit Card
+542,6804.25,Accepted,STC Pay
+543,6032.57,Accepted,Mada
+544,291.96,Accepted,Mada
+545,5678.82,Rejected,Credit Card
+546,5842.15,Accepted,Credit Card
+547,5013.8,Accepted,Apple Pay
+548,2075.71,Accepted,Apple Pay
+549,1890.49,Rejected,Apple Pay
+550,7199.97,Accepted,Mada
+551,3310.49,Accepted,Mada
+552,431.35,Accepted,Apple Pay
+553,3539.31,Rejected,Credit Card
+554,6942.21,Accepted,Apple Pay
+555,4455.73,Rejected,Credit Card
+556,3650.81,Rejected,Credit Card
+557,927.53,Rejected,Apple Pay
+558,434.14,Rejected,Credit Card
+559,6965.24,Rejected,Apple Pay
+560,897.77,Accepted,STC Pay
+561,7782.74,Accepted,Credit Card
+562,7831.21,Accepted,Apple Pay
+563,7316.4,Accepted,Apple Pay
+564,5780.62,Accepted,Credit Card
+565,1846.46,Accepted,Mada
+566,3053.44,Accepted,Apple Pay
+567,6242.5,Rejected,Mada
+568,6938.25,Rejected,Mada
+569,2292.68,Rejected,Mada
+570,7567.19,Accepted,Credit Card
+571,5010.68,Rejected,Credit Card
+572,6891.53,Accepted,Credit Card
+573,3891.19,Rejected,STC Pay
+574,5526.34,Rejected,Mada
+575,1131.66,Rejected,Credit Card
+576,2680.37,Rejected,STC Pay
+577,3071.06,Rejected,Apple Pay
+578,7010.97,Rejected,STC Pay
+579,2735.12,Accepted,Apple Pay
+580,6315.38,Accepted,Mada
+581,1200.36,Accepted,STC Pay
+582,6009.19,Accepted,Mada
+583,4869.47,Rejected,STC Pay
+584,5881.99,Accepted,Mada
+585,7976.95,Accepted,Apple Pay
+586,4956.5,Rejected,Mada
+587,3067.39,Rejected,Credit Card
+588,747.43,Rejected,Credit Card
+589,4107.27,Rejected,Mada
+590,6649.04,Rejected,Apple Pay
+591,7814.86,Accepted,Apple Pay
+592,7049.29,Accepted,Apple Pay
+593,3787.15,Rejected,Mada
+594,2116.91,Accepted,STC Pay
+595,4807.88,Rejected,Apple Pay
+596,2786.71,Accepted,Apple Pay
+597,7235.32,Rejected,Credit Card
+598,845.47,Rejected,Credit Card
+599,800.38,Rejected,Apple Pay
+600,1967.78,Rejected,Credit Card
+601,6146.87,Rejected,Credit Card
+602,43.54,Rejected,Apple Pay
+603,6631.63,Accepted,Apple Pay
+604,5998.48,Rejected,Mada
+605,4810.28,Accepted,Apple Pay
+606,635.62,Accepted,Mada
+607,629.23,Accepted,Apple Pay
+608,2664.46,Accepted,STC Pay
+609,4799.77,Accepted,STC Pay
+610,2113.34,Rejected,STC Pay
+611,7685.17,Rejected,STC Pay
+612,486.52,Rejected,Apple Pay
+613,302.49,Rejected,STC Pay
+614,2585.94,Rejected,Apple Pay
+615,1473.77,Accepted,Credit Card
+616,4029.16,Rejected,Apple Pay
+617,6606.61,Rejected,Credit Card
+618,3528.81,Rejected,Apple Pay
+619,4044.64,Accepted,Mada
+620,4974.42,Rejected,Apple Pay
+621,2162.99,Accepted,Mada
+622,3449.12,Accepted,STC Pay
+623,4926.56,Accepted,STC Pay
+624,5640.63,Accepted,Credit Card
+625,4182.69,Rejected,STC Pay
+626,6964.93,Accepted,Credit Card
+627,6248.43,Rejected,Apple Pay
+628,6012.92,Accepted,STC Pay
+629,1604.47,Rejected,Credit Card
+630,5176.33,Accepted,Apple Pay
+631,1443.26,Rejected,Mada
+632,2971.74,Rejected,STC Pay
+633,2865.02,Accepted,Mada
+634,5473.53,Accepted,Mada
+635,3406.64,Rejected,STC Pay
+636,2474.61,Rejected,Mada
+637,5011.92,Accepted,Credit Card
+638,5104.84,Accepted,Credit Card
+639,22.37,Accepted,STC Pay
+640,4773.49,Rejected,Mada
+641,6448.01,Accepted,STC Pay
+642,2068.41,Accepted,STC Pay
+643,2066.98,Accepted,Credit Card
+644,4349.13,Rejected,Credit Card
+645,6606.27,Rejected,Apple Pay
+646,2189.64,Accepted,STC Pay
+647,6625.47,Accepted,Credit Card
+648,5631.04,Rejected,Mada
+649,6026.36,Accepted,Credit Card
+650,3369.56,Rejected,STC Pay
+651,5307.48,Rejected,Credit Card
+652,3897.93,Rejected,STC Pay
+653,4159.51,Rejected,Apple Pay
+654,6072.52,Accepted,Apple Pay
+655,1592.38,Accepted,STC Pay
+656,5404.57,Rejected,STC Pay
+657,2565.81,Accepted,STC Pay
+658,7977.41,Accepted,Apple Pay
+659,1142.91,Accepted,Apple Pay
+660,2887.4,Rejected,Mada
+661,6627.62,Rejected,Apple Pay
+662,6743.29,Accepted,Mada
+663,782.53,Rejected,Credit Card
+664,5830.83,Accepted,STC Pay
+665,298.86,Rejected,Mada
+666,3488.64,Accepted,Credit Card
+667,4313.48,Rejected,Apple Pay
+668,6087.12,Accepted,STC Pay
+669,5546.12,Rejected,Apple Pay
+670,1536.19,Rejected,Credit Card
+671,7553.86,Rejected,Credit Card
+672,2949.68,Rejected,Apple Pay
+673,5630.31,Accepted,STC Pay
+674,5219.53,Rejected,Mada
+675,161.43,Accepted,Apple Pay
+676,7851.82,Accepted,STC Pay
+677,21,Rejected,Credit Card
+678,4052.01,Rejected,Mada
+679,4827.6,Rejected,STC Pay
+680,1356.2,Accepted,Apple Pay
+681,5675.98,Accepted,STC Pay
+682,4364.47,Accepted,Credit Card
+683,7121.58,Rejected,STC Pay
+684,4676.8,Accepted,Credit Card
+685,5691.02,Accepted,Credit Card
+686,1701.85,Accepted,Apple Pay
+687,3670.35,Accepted,STC Pay
+688,5012.09,Accepted,Credit Card
+689,6571.8,Rejected,Apple Pay
+690,1511.96,Accepted,Apple Pay
+691,7733.74,Accepted,Apple Pay
+692,7534.69,Rejected,STC Pay
+693,3366.65,Rejected,STC Pay
+694,1130.71,Rejected,Apple Pay
+695,3659.92,Rejected,Apple Pay
+696,7723.03,Rejected,Credit Card
+697,6483.49,Rejected,Apple Pay
+698,6561.81,Rejected,Credit Card
+699,2154.85,Rejected,STC Pay
+700,1919.97,Rejected,Mada
+701,3498.58,Accepted,Mada
+702,3220.71,Accepted,Apple Pay
+703,3529.2,Accepted,Apple Pay
+704,4555.27,Rejected,STC Pay
+705,3384.66,Accepted,Credit Card
+706,825.31,Accepted,STC Pay
+707,1239.39,Rejected,Mada
+708,6933.11,Rejected,Credit Card
+709,3775.67,Rejected,STC Pay
+710,2822.53,Accepted,Apple Pay
+711,7837.31,Accepted,STC Pay
+712,5676.24,Rejected,Mada
+713,2770.91,Accepted,Mada
+714,981.27,Accepted,Credit Card
+715,1774.9,Rejected,Credit Card
+716,5631.4,Accepted,Apple Pay
+717,438.82,Rejected,Mada
+718,6793.57,Rejected,Credit Card
+719,1577.82,Rejected,Mada
+720,161.17,Accepted,Credit Card
+721,3858.77,Accepted,Mada
+722,6342.89,Accepted,Apple Pay
+723,7723.72,Rejected,STC Pay
+724,5770.81,Accepted,Credit Card
+725,1433.2,Accepted,STC Pay
+726,3555.09,Rejected,Credit Card
+727,6262.32,Rejected,Mada
+728,2614.62,Accepted,Mada
+729,4637.71,Rejected,Credit Card
+730,5433.08,Rejected,Apple Pay
+731,4310.88,Rejected,Credit Card
+732,1835.26,Accepted,Credit Card
+733,5091.63,Accepted,STC Pay
+734,7592.28,Accepted,Mada
+735,1978.9,Accepted,Mada
+736,5063.95,Accepted,Credit Card
+737,3179.24,Rejected,Mada
+738,829.44,Accepted,Mada
+739,5611.39,Rejected,Credit Card
+740,209.18,Accepted,Apple Pay
+741,3538.41,Accepted,Mada
+742,4463.65,Rejected,Apple Pay
+743,7735.52,Rejected,STC Pay
+744,3642.09,Rejected,Mada
+745,432.83,Accepted,Apple Pay
+746,6297.01,Accepted,Credit Card
+747,2667.63,Rejected,Credit Card
+748,5518.09,Rejected,STC Pay
+749,1446.73,Rejected,Mada
+750,1671.81,Accepted,Credit Card
+751,2870.86,Accepted,Credit Card
+752,5221.71,Accepted,Apple Pay
+753,4632.08,Rejected,Credit Card
+754,2987.71,Accepted,Apple Pay
+755,3598.39,Accepted,Credit Card
+756,1458.97,Rejected,STC Pay
+757,2079.22,Accepted,STC Pay
+758,6186.83,Rejected,STC Pay
+759,2433.12,Rejected,Apple Pay
+760,3667.12,Rejected,Apple Pay
+761,4161.68,Accepted,Credit Card
+762,423.73,Accepted,STC Pay
+763,4170.37,Rejected,STC Pay
+764,560.66,Accepted,STC Pay
+765,292.75,Accepted,Credit Card
+766,3295.96,Rejected,Credit Card
+767,461.29,Accepted,STC Pay
+768,6096.51,Rejected,Credit Card
+769,4042.18,Rejected,STC Pay
+770,6906.68,Accepted,Apple Pay
+771,4233.74,Accepted,STC Pay
+772,6070.1,Accepted,Mada
+773,4064.13,Rejected,Mada
+774,3495.26,Rejected,Apple Pay
+775,3122.48,Accepted,Credit Card
+776,7755.49,Rejected,Credit Card
+777,4031.24,Accepted,Credit Card
+778,2622.68,Rejected,Credit Card
+779,1091.16,Accepted,Apple Pay
+780,5392.28,Rejected,STC Pay
+781,1586.87,Accepted,Apple Pay
+782,7022.78,Rejected,Mada
+783,7308.05,Rejected,Credit Card
+784,4204.02,Rejected,STC Pay
+785,1918.71,Accepted,Credit Card
+786,7270.18,Rejected,Apple Pay
+787,7318.5,Accepted,Apple Pay
+788,2811.26,Rejected,Mada
+789,3995.06,Accepted,Mada
+790,2923.06,Accepted,Credit Card
+791,1585.11,Accepted,STC Pay
+792,329.73,Accepted,Mada
+793,7808.15,Rejected,Mada
+794,5435.78,Rejected,Apple Pay
+795,4269.64,Accepted,Apple Pay
+796,2424.79,Accepted,Credit Card
+797,2384.18,Rejected,Credit Card
+798,5331.26,Rejected,Mada
+799,1371.89,Rejected,Apple Pay
+800,3362.63,Accepted,Mada
+801,4273.82,Rejected,Credit Card
+802,3997.85,Accepted,Credit Card
+803,2220.31,Rejected,Mada
+804,4547.94,Rejected,Credit Card
+805,1302.63,Rejected,Mada
+806,7605.05,Accepted,STC Pay
+807,6554.52,Accepted,Credit Card
+808,7496.81,Rejected,Credit Card
+809,3153.99,Rejected,Apple Pay
+810,5239.64,Accepted,Credit Card
+811,2515.13,Rejected,Apple Pay
+812,1523.31,Accepted,STC Pay
+813,643.69,Rejected,Apple Pay
+814,308.9,Accepted,Mada
+815,4059.88,Accepted,Credit Card
+816,1319.46,Rejected,Mada
+817,113.96,Rejected,Apple Pay
+818,412.19,Rejected,Credit Card
+819,2927.77,Rejected,Mada
+820,4344.63,Accepted,Apple Pay
+821,3353.43,Rejected,STC Pay
+822,4343.86,Accepted,Apple Pay
+823,6222.03,Rejected,Credit Card
+824,3936.75,Rejected,STC Pay
+825,1544.59,Rejected,Apple Pay
+826,2484.15,Rejected,Credit Card
+827,4248.08,Rejected,Apple Pay
+828,4787.93,Accepted,Credit Card
+829,5840.97,Rejected,Credit Card
+830,3557.13,Rejected,Mada
+831,7935.06,Accepted,STC Pay
+832,5394.66,Rejected,Credit Card
+833,830.59,Accepted,Mada
+834,6366.91,Rejected,Apple Pay
+835,6454.66,Accepted,Mada
+836,6410.47,Rejected,Apple Pay
+837,4229.01,Rejected,Mada
+838,5867.73,Rejected,Apple Pay
+839,4580.7,Rejected,Mada
+840,4637.23,Accepted,STC Pay
+841,1944.36,Accepted,STC Pay
+842,4324.71,Accepted,Mada
+843,4076.85,Accepted,STC Pay
+844,7660.8,Accepted,STC Pay
+845,7129.09,Accepted,STC Pay
+846,1778.21,Accepted,STC Pay
+847,585.94,Rejected,STC Pay
+848,4502.4,Rejected,STC Pay
+849,919.35,Rejected,Credit Card
+850,6022.83,Rejected,Mada
+851,4006.79,Accepted,STC Pay
+852,7850.34,Accepted,Apple Pay
+853,5087.7,Accepted,Mada
+854,7385.91,Rejected,Apple Pay
+855,4964.73,Rejected,Credit Card
+856,3756.72,Accepted,Apple Pay
+857,1975.07,Accepted,Credit Card
+858,6782.85,Rejected,Apple Pay
+859,7225.38,Rejected,Apple Pay
+860,6130.67,Accepted,STC Pay
+861,7703.59,Rejected,Credit Card
+862,5662.69,Rejected,Mada
+863,7884.97,Accepted,Credit Card
+864,2534.34,Accepted,STC Pay
+865,7532.42,Rejected,STC Pay
+866,3385.89,Rejected,Credit Card
+867,4622.63,Accepted,Mada
+868,2750.12,Rejected,Mada
+869,1402.22,Accepted,Mada
+870,3617.85,Accepted,Mada
+871,5080.49,Rejected,Apple Pay
+872,2553.98,Rejected,Apple Pay
+873,5761.86,Rejected,Apple Pay
+874,7187.21,Rejected,STC Pay
+875,833.18,Accepted,Mada
+876,6278.64,Accepted,Apple Pay
+877,7271.81,Rejected,STC Pay
+878,3788.09,Accepted,Credit Card
+879,2902.46,Rejected,Credit Card
+880,6798.8,Accepted,Apple Pay
+881,5134.24,Accepted,Apple Pay
+882,4767.13,Accepted,Apple Pay
+883,7591.08,Accepted,Apple Pay
+884,6722.56,Rejected,Credit Card
+885,1312.54,Accepted,Mada
+886,251.78,Rejected,Apple Pay
+887,2632.33,Rejected,Mada
+888,5559.4,Rejected,STC Pay
+889,6882.34,Accepted,STC Pay
+890,780.36,Accepted,Mada
+891,7672.29,Accepted,Mada
+892,970.05,Rejected,Mada
+893,1989.53,Accepted,Apple Pay
+894,3448.49,Rejected,Credit Card
+895,7379.78,Rejected,Credit Card
+896,1548.63,Accepted,STC Pay
+897,866.8,Accepted,Mada
+898,6989.05,Rejected,STC Pay
+899,3170.22,Accepted,Apple Pay
+900,4144.66,Accepted,Mada
+901,1682.48,Rejected,Credit Card
+902,1921.68,Rejected,Apple Pay
+903,2962.05,Accepted,Mada
+904,2313.13,Rejected,Credit Card
+905,2325.8,Rejected,Mada
+906,7257.47,Rejected,Credit Card
+907,6367.05,Accepted,Mada
+908,4084.1,Rejected,STC Pay
+909,6369.17,Accepted,Credit Card
+910,3424.24,Accepted,Mada
+911,3980.54,Accepted,Mada
+912,6606.67,Accepted,Mada
+913,3095.17,Accepted,STC Pay
+914,4973.45,Accepted,Mada
+915,4355.67,Accepted,STC Pay
+916,1258.36,Accepted,Mada
+917,6807.39,Rejected,Apple Pay
+918,6212.9,Rejected,Mada
+919,1964.48,Accepted,Mada
+920,1497.06,Rejected,Credit Card
+921,1768.96,Accepted,Mada
+922,5776.67,Rejected,Mada
+923,2851.93,Accepted,Mada
+924,7800.77,Accepted,STC Pay
+925,7662.84,Accepted,Credit Card
+926,6322.83,Rejected,STC Pay
+927,114.36,Rejected,STC Pay
+928,764.34,Rejected,STC Pay
+929,372.31,Rejected,STC Pay
+930,6242.64,Accepted,Apple Pay
+931,4143.94,Accepted,Apple Pay
+932,3889.95,Accepted,Credit Card
+933,4051.52,Rejected,Mada
+934,5037.68,Rejected,Mada
+935,2870.15,Rejected,STC Pay
+936,1564.57,Accepted,Mada
+937,2425.19,Accepted,Credit Card
+938,1872.03,Rejected,STC Pay
+939,1891.95,Rejected,Apple Pay
+940,2703.7,Accepted,Mada
+941,1094.82,Accepted,Apple Pay
+942,6900.01,Accepted,Apple Pay
+943,307.22,Rejected,Mada
+944,1605.53,Rejected,Apple Pay
+945,3413.16,Accepted,Apple Pay
+946,898.36,Accepted,Credit Card
+947,6760.79,Rejected,Apple Pay
+948,873.61,Accepted,STC Pay
+949,5667.07,Rejected,Mada
+950,545.78,Rejected,Credit Card
+951,5979.18,Accepted,Apple Pay
+952,6070.72,Rejected,STC Pay
+953,7279.24,Rejected,STC Pay
+954,7840.44,Rejected,Mada
+955,3570.1,Accepted,Apple Pay
+956,924.71,Accepted,Credit Card
+957,6519.21,Accepted,Mada
+958,3787.39,Accepted,Mada
+959,6222.89,Accepted,STC Pay
+960,6926.61,Rejected,Credit Card
+961,3161.69,Rejected,STC Pay
+962,6939.11,Rejected,Mada
+963,2099.29,Accepted,STC Pay
+964,5229.06,Rejected,Mada
+965,2238.08,Rejected,Credit Card
+966,5629.31,Rejected,STC Pay
+967,7949.7,Accepted,Apple Pay
+968,2869.33,Accepted,Credit Card
+969,4418.17,Rejected,Credit Card
+970,6434.58,Accepted,Apple Pay
+971,5865.28,Rejected,Apple Pay
+972,2615.73,Rejected,Apple Pay
+973,2497.08,Rejected,Apple Pay
+974,1927.29,Rejected,Mada
+975,5176.63,Rejected,Apple Pay
+976,2216.85,Accepted,STC Pay
+977,6743.92,Accepted,Credit Card
+978,5120.3,Accepted,Mada
+979,857.48,Accepted,Credit Card
+980,4143.3,Accepted,STC Pay
+981,5730.25,Rejected,Credit Card
+982,1408.46,Rejected,STC Pay
+983,281.43,Accepted,Mada
+984,6944.91,Accepted,Mada
+985,3573.27,Rejected,STC Pay
+986,7790.86,Accepted,Apple Pay
+987,2339.87,Accepted,Apple Pay
+988,2992.17,Accepted,Credit Card
+989,6468.58,Accepted,STC Pay
+990,985.12,Accepted,Apple Pay
+991,5769.89,Accepted,Mada
+992,597.92,Rejected,Credit Card
+993,1658.84,Accepted,Credit Card
+994,414.53,Rejected,STC Pay
+995,4946.08,Accepted,STC Pay
+996,2936.88,Rejected,Credit Card
+997,6386.56,Accepted,Credit Card
+998,953.35,Accepted,Apple Pay
+999,7035.89,Rejected,Credit Card
+1000,4403.05,Rejected,Apple Pay
