@@ -2,135 +2,209 @@
 
 # 🛒 E-Commerce Data Analysis Project (SQL Server)
 
-### 📊 مشروع تحليل بيانات متجر إلكتروني: استخراج وتحليل الأداء التجاري، سلوك العملاء، وطرق الدفع عبر الـ SQL
+### 📊 مشروع تحليل بيانات متجر إلكتروني: استخراج وتحليل الأداء التجاري، سلوك العملاء، وطرق الدفع عبر الـ T-SQL
 
 ---
 
 ## 📌 1. الملخص التنفيذي (Executive Summary)
 
-في تطبيقات ومتارج التجارة الإلكترونية، يُعد تقييم كفاءة الأنشطة التجارية وتكرار المبيعات هو المحرك الأساسي للنمو واستدامة الأرباح.
+في متجر التجارة الإلكترونية، يُعد قياس كفاءة الأنشطة التجارية وتكرار المبيعات هو المحرك الأساسي للنمو واستدامة الأرباح.
 
-يهدف هذا المشروع إلى بناء خط استعلام ذكي (**SQL Analytical Pipeline**) لفحص قاعدة بيانات المتجر، وتتبع أداء الأنشطة التجارية المختلفة، وحساب إجمالي الإيرادات، ومتوسط قيمة الطلب (**Avg Order Value - AOV**) بدقة لتوجيه خطط التوسع والاستثمار الرقمي.
+يهدف هذا المشروع إلى بناء خط استعلام ذكي (**SQL Analytical Pipeline**) لفحص قاعدة بيانات المتجر، وتتبع أداء الأنشطة التجارية المختلفة، وحساب إجمالي الإيرادات، ومتوسط قيمة الطلب (**Avg Order Value - AOV**) بدقة، إضافة إلى تحليل سلوك الدفع والمخزون الحرج لتوجيه القرارات الاستراتيجية.
 
 ---
 
-## 🛠️ 2. هندسة البيانات وصياغة الاستعلام (SQL Architecture & Data Pipeline)
+## 🛠️ 2. بنية قاعدة البيانات والعلاقات (Database Schema)
 
-تم بناء الاستعلام داخل بيئة **SQL Server** بالاعتماد على تقنيات متقدمة لضمان سرعة المعالجة وعدم استهلاك موارد السيرفر.
+تم إنشاء قاعدة البيانات وتصميم الهيكل على **SQL Server** مع الاعتماد على العلاقات المباشرة (**Foreign Keys**) لضمان سلامة البيانات:
 
-### 📐 تصميم الجدول والعلاقات (Relational Schema)
-تم إنشاء بنية متكاملة تتكون من 4 جداول رئيسية مع ربطها بعلاقات صحيحة (**Foreign Keys**):
-1. **العملاء (`Customers`):** تخزين بيانات العملاء وتفاصيل التواصل والمدن.
-2. **المنتجات والمخزون (`Products`):** إدارة المنتجات، التصنيفات، الأسعار، وكميات المخزون المتاحة.
-3. **الطلبات (`Orders`):** تتبع حالة الطلبات (`OrderStatus`) وطرق الدفع (`PaymentMethod`).
-4. **تفاصيل الطلبات (`OrderDetails`):** ربط الطلبات بالمنتجات المباعة والكميات والأسعار وقت الشراء.
+* **جدول العملاء (`Customers`):** CustomerID, FullName, City, Phone
+* **جدول المنتجات (`Products`):** ProductID, ProductName, Category, Price, StockQuantity
+* **جدول الطلبات (`Orders`):** OrderID, CustomerID, OrderDate, PaymentMethod, OrderStatus
+* **جدول تفاصيل الطلبات (`OrderDetails`):** OrderDetailID, OrderID, ProductID, Quantity, UnitPrice
+
+<details>
+<summary><b>إظهار كود إنشاء الجداول (DDL Code)</b></summary>
 
 ```sql
--- ===================================================
--- E-Commerce Business Intelligence & Analytics Queries
--- Engine: SQL Server (T-SQL)
--- ===================================================
+-- 1. إنشاء جدول العملاء (Customers)
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    FullName NVARCHAR(100) NOT NULL,
+    City NVARCHAR(50) NOT NULL,
+    Phone VARCHAR(20)
+);
 
--- 1. Mapped Analytical View for Orders and Payment Methods
+-- 2. إنشاء جدول المنتجات (Products)
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName NVARCHAR(100) NOT NULL,
+    Category NVARCHAR(50) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    StockQuantity INT NOT NULL
+);
+
+-- 3. إنشاء جدول الطلبات (Orders)
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE NOT NULL,
+    PaymentMethod VARCHAR(30) NOT NULL,
+    OrderStatus VARCHAR(20) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+-- 4. إنشاء جدول تفاصيل الطلبات (OrderDetails)
+CREATE TABLE OrderDetails (
+    OrderDetailID INT PRIMARY KEY,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+```
+</details>
+
+---
+
+## 📈 3. الاستعلامات التحليلية والنتائج المصورة (Analytical Queries & Results)
+
+### 📊 الاستعلام 1: إجمالي المبيعات والإيرادات ومتوسط الطلب للطلبات المكتملة
+
+**الهدف:** حساب المؤشرات الرئيسية للأداء (KPIs) شاملة عدد الطلبات المكتملة، إجمالي الإيرادات، ومتوسط قيمة الطلب (AOV).
+
+```sql
 SELECT 
-    o.order_id,
-    c.customer_name,
-    c.city,
-    o.payment_method,
-    SUM(od.quantity * od.unit_price) AS total_order_value
-FROM Orders o
-JOIN Customers c ON o.customer_id = c.customer_id
-JOIN OrderDetails od ON o.order_id = od.order_id
-WHERE o.order_status = N'مكتمل'
-GROUP BY o.order_id, c.customer_name, c.city, o.payment_method;
+    COUNT(DISTINCT Orders.OrderID) AS Completed_Orders,
+    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR ') AS Total_Revenue,
+    CONCAT(CAST(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) * 1.0 / COUNT(DISTINCT Orders.OrderID) AS DECIMAL(10,2)), ' SAR') AS Avg_Order_Value
+FROM Orders
+JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+WHERE Orders.OrderStatus = 'Completed';
 ```
 
----
+<p align="center">
+  <img src="images/01_kpi_summary.png" alt="إجمالي المبيعات والإيرادات ومتوسط الطلب" width="85%"/>
+</p>
 
-## 📈 3. تحليل النتائج ومؤشرات الأداء (Data Insights & Performance Numbers)
-
-بعد تشغيل الاستعلامات بنجاح على قاعدة البيانات، تم الخروج بالنتائج التحليلية التالية:
-
-### 🏆 أ. ملخص الأداء العام والمبيعات (General Sales KPIs)
-
-| إجمالي الطلبات المكتملة | إجمالي الإيرادات (SAR) | متوسط قيمة الطلب (AOV) |
-| :---: | :---: | :---: |
-| **16 طلب** | **30,530.00 SAR** | **1,908.13 SAR** |
-
-![ملخص الأداء والمبيعات](images/01_kpi_summary.png)
+> **💡 إضاءة تحليلية:** بلغ إجمالي الطلبات الناجحة 16 طلباً بمتوسط قيمة طلب ينعكس بشكل إيجابي على متوسط السلة الشراء للمتجر.
 
 ---
 
-### 💳 ب. تحليل أداء المبيعات حسب طريقة الدفع (Payment Methods Analysis)
+### 💳 الاستعلام 2: تحليل المبيعات وعدد الطلبات حسب طريقة الدفع
 
-| طريقة الدفع | عدد الطلبات | إجمالي المبيعات (SAR) | نسبة المشاركة والتصنيف |
-| :--- | :---: | :---: | :--- |
-| **STC Pay** | 5 | **11,250.00 SAR** | <span style="color:#22c55e">الأعلى مبيعاً وإيراداً</span> |
-| **مدى (Mada)** | 5 | **9,200.00 SAR** | <span style="color:#3b82f6">طلب قوي وتفضل محلي</span> |
-| **أبل باي (Apple Pay)** | 4 | **6,060.00 SAR** | <span style="color:#a855f7">نمو ممتاز عبر الجوال</span> |
-| **بطاقة إئتمان (Credit Card)** | 2 | **4,020.00 SAR** | <span style="color:#ef4444">الأقل مشاركة</span> |
+**الهدف:** تحديد طرق الدفع الأكثر استخداماً وتحقيقاً للإيرادات لتوجيه اتفاقيات بوابة الدفع وتحسين تجربة المستخدم.
 
-![تحليل طرق الدفع](images/02_payment_methods.png)
+```sql
+SELECT 
+    Orders.PaymentMethod,
+    COUNT(DISTINCT Orders.OrderID) AS Total_Orders,
+    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Sales_SAR
+FROM Orders
+JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+WHERE Orders.OrderStatus = 'Completed'
+GROUP BY Orders.PaymentMethod
+ORDER BY Total_Sales_SAR DESC;
+```
 
----
+<p align="center">
+  <img src="images/02_payment_methods.png" alt="تحليل المبيعات حسب طريقة الدفع" width="85%"/>
+</p>
 
-### 📦 ج. تقرير تحليل أداء أفضل 5 منتجات مبيعاً (Top 5 Best-Selling Products)
-
-| الترتيب | اسم المنتج | الفئة | إجمالي الوحدات المباعة | إجمالي الإيرادات (SAR) |
-| :---: | :--- | :---: | :---: | :---: |
-| **1** | **آيفون 15 برو ماكس 256 جيجا** | إلكترونيات | 2 | **9,600.00 SAR** |
-| **2** | **سامسونج جالاكسي S24 ألترا** | إلكترونيات | 2 | **8,400.00 SAR** |
-| **3** | **عطر عود ملكي فاخر 100 مل** | عطور وتجميل | 3 | **1,350.00 SAR** |
-| **4** | **قميص مانشستر كلاسيك** | أزياء ومستلزمات | 5 | **1,100.00 SAR** |
-| **5** | **بخور مكي طبيعي ممتاز** | عطور وتجميل | 3 | **900.00 SAR** |
-
-![أفضل 5 منتجات مبيعاً](images/03_top_products.png)
+> **💡 إضاءة تحليلية:** تُظهر البيانات تفضيل العميل للحلول المحلية والذكية مثل **STC Pay** و **مدى (Mada)** كأعلى حصة مبيعات.
 
 ---
 
-### 👑 د. تحليل كبار العملاء (Top 5 VIP Customers)
+### 🏆 الاستعلام 3: أفضل 5 منتجات مبيعاً وتحقيقاً للإيرادات
 
-> **إجمالي مبيعات فئة الـ VIP:** `30,700.00 SAR`
+**الهدف:** تحديد المنتجات القيادية (Best-Sellers) لدعم الحملات التسويقية وإدارة المخزون بشكل فعّال.
 
-| الترتيب | اسم العملاء | المدينة | إجمالي الطلبات | إجمالي المشتريات (SAR) |
-| :---: | :--- | :---: | :---: | :---: |
-| 🥇 | **أحمد العتيبي** | الرياض | 2 | **6,500.00 SAR** |
-| 🥈 | **سعود العنزي** | تبوك | 2 | **5,200.00 SAR** |
-| 🥉 | **لطيفة العيسي** | الرياض | 1 | **4,800.00 SAR** |
-| **4** | **بدر الخالدي** | الأحساء | 1 | **4,200.00 SAR** |
-| **5** | **سارة الشهري** | جدة | 1 | **4,200.00 SAR** |
+```sql
+SELECT TOP 5
+    Products.ProductName,
+    Products.Category,
+    SUM(OrderDetails.Quantity) AS Total_Units_Sold,
+    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Revenue
+FROM OrderDetails
+JOIN Products ON OrderDetails.ProductID = Products.ProductID
+JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
+WHERE Orders.OrderStatus = 'Completed'
+GROUP BY Products.ProductName, Products.Category
+ORDER BY Total_Units_Sold DESC;
+```
 
-![كبار العملاء VIP](images/04_top_vip_customers.png)
+<p align="center">
+  <img src="images/03_top_products.png" alt="أفضل 5 منتجات مبيعاً" width="85%"/>
+</p>
+
+> **💡 إضاءة تحليلية:** تتصدر فئة الإلكترونيات المبيعات من حيث قيمة الإيراد، بينما تسجل العطور والأزياء حجماً ممتازاً في عدد الوحدات المباعة.
 
 ---
 
-### ⚠️ هـ. المنتجات التي تتطلب إعادة طلب (تحذير المخزون المنخفض <= 30)
+### ⚠️ الاستعلام 4: المنتجات التي تتطلب إعادة طلب (تحذير المخزون المنخفض <= 30)
 
-| الترتيب | اسم المنتج | الفئة | الكمية المتاحة | السعر (SAR) | حالة التنبيه |
-| :---: | :--- | :---: | :---: | :---: | :---: |
-| **1** | **تلفزيون سوني 65 بوصة 4K** | إلكترونيات | **10** | 3,400.00 SAR | ⚠️ حرج (تحت الحد الأدنى) |
-| **2** | **ماكينة قهوة ديلونجي بديسيكا** | أجهزة منزلية | **15** | 850.00 SAR | ⚠️ حرج (تحت الحد الأدنى) |
-| **3** | **آلترا S24 سامسونج جالاكسي** | إلكترونيات | **18** | 4,200.00 SAR | ✅ متابعة التوريد |
-| **4** | **طقم أواني طهي سيراميك** | أجهزة منزلية | **22** | 620.00 SAR | ✅ متابعة التوريد |
-| **5** | **آيفون 15 بروماكس 256 جيجا** | إلكترونيات | **25** | 4,800.00 SAR | ✅ متابعة التوريد |
-| **6** | **قلاية هوائية فيليبس 1.2 كجم** | أجهزة منزلية | **30** | 550.00 SAR | ✅ آمن نسبيًا |
+**الهدف:** التنبؤ بنقص المخزون وتحديد المنتجات الحرجة لمنع انقطاع السلع المباعة.
 
-![المخزون المنخفض والتنبيهات](images/05_low_stock_alerts.png)
+```sql
+SELECT 
+    Products.ProductID,
+    Products.ProductName,
+    Products.Category,
+    Products.StockQuantity,
+    Products.Price
+FROM Products
+WHERE Products.StockQuantity <= 30
+ORDER BY Products.StockQuantity ASC;
+```
+
+<p align="center">
+  <img src="images/04_low_stock_alerts.png" alt="المنتجات التي تتطلب إعادة طلب" width="85%"/>
+</p>
+
+> **💡 إضاءة تحليلية:** أظهر الاستعلام تنبيهاً لعدة منتجات وصلت للحد الحرج (مثل التلفزيونات والأجهزة المنزلية) مما يستدعي طلب توريد عاجل.
+
+---
+
+### 👑 الاستعلام 5: تحليل كبار العملاء من حيث إجمالي المشتريات (VIP Customers)
+
+**الهدف:** التعرف على شريحة العملاء الأكثر ربحية لتقديم برنامج ولاء مخصص وتجربة استثنائية.
+
+```sql
+SELECT TOP 5
+    Customers.FullName,
+    Customers.City,
+    COUNT(DISTINCT Orders.OrderID) AS Total_Orders,
+    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Spent
+FROM Customers
+JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+WHERE Orders.OrderStatus = 'Completed'
+GROUP BY Customers.FullName, Customers.City
+ORDER BY SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) DESC;
+```
+
+<p align="center">
+  <img src="images/05_top_vip_customers.png" alt="تحليل كبار العملاء" width="85%"/>
+</p>
+
+> **💡 إضاءة تحليلية:** تركز الجهد الشرائي الأكبر في المدن الرئيسية (الرياض، تبوك، جدة) مما يدعم توجه تخصيص حملات استهداف جغرافية.
 
 ---
 
 ## 🎯 4. التوصيات الإستراتيجية المبنية على البيانات (Data-Driven Recommendations)
 
-1. **دعم قنوات الدفع المفضلة:** نظراً لأن **STC Pay** و **مدى** يحققان أعلى نسبة إيرادات ومعاملات، يجب التركيز على تقديم عروض وتجارب دفع سلسة تتوافق مع تفضيلات العملاء لهذه القنوات.
-2. **إدارة المخزون والتنبيه المبكر:** وجود منتجات رئيسية مثل تلفزيونات سوني وماكينات القهوة بمخزون أقل من 15 قطعة يعرض المتجر لخسارة مبيعات محتملة، ويجب تفعيل خطة إعادة توريد فورية.
-3. **برامج ولاء العملاء (VIP Retention):** الاستفادة من قاعدة بيانات كبار العملاء (مثل أحمد العتيبي وسعود العنزي) وتقديم عروض حصرية مخصصة لهم لضمان استمرارية الشراء وتكرار الطلبات.
+1. **التركيز على وسائل الدفع الأكثر شيوعاً:** استمرار دعم وتسهيل خيارات **STC Pay** و **مدى** وتجهيز خصومات حصريّة لمستخدميها.
+2. **إدارة المخزون والتنبيه الآلي:** تفعيل تنبيه آلي عند انخفاض الكمية عن 30 قطعة لمنع خسارة أي فرص مبيعات.
+3. **برامج ولاء لكبار العملاء (VIP Retention):** تقديم عروض خاصة ومخصصة لأعلى العملاء إنفاقاً للحفاظ على استمرارية الشراء.
 
 ---
 
 ## 💻 5. التقنيات والأدوات المستخدمة (Tech Stack)
 
 * **Database Engine:** SQL Server (SSMS / T-SQL)
-* **SQL Techniques:** Relational Schema Design, Foreign Keys, Aggregations (`SUM`, `COUNT`), Grouping (`GROUP BY`), Sorting (`ORDER BY`), Joins, and String Formatting (`CONCAT`, `CAST`).
-* **Visualization & Reporting:** Analytics Dashboards, Custom Charting & GitHub Styled Markdown/HTML.
+* **SQL Concepts Used:** DDL/DML, Relational Integrity, `JOINs`, Aggregate Functions (`SUM`, `COUNT`), Grouping & Sorting (`GROUP BY`, `ORDER BY`), Data Formatting (`CONCAT`, `CAST`).
+* **Documentation & Presentation:** GitHub Markdown with HTML Embedded Visuals.
 
 </div>
