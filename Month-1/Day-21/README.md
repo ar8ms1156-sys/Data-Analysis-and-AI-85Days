@@ -1,8 +1,8 @@
 <div dir="rtl">
 
-# 🛒 E-Commerce Data Analysis Project (SQL Server)
+# 🛒 E-Commerce Data Analysis Project
 
-### 📊 مشروع تحليل بيانات متجر إلكتروني: استخراج وتحليل الأداء التجاري، سلوك العملاء، وطرق الدفع عبر الـ T-SQL
+### 📊 مشروع تحليل بيانات متجر إلكتروني: استخراج وتحليل الأداء التجاري وسلوك العملاء
 
 ---
 
@@ -10,70 +10,13 @@
 
 في متجر التجارة الإلكترونية، يُعد قياس كفاءة الأنشطة التجارية وتكرار المبيعات هو المحرك الأساسي للنمو واستدامة الأرباح.
 
-يهدف هذا المشروع إلى بناء خط استعلام ذكي (**SQL Analytical Pipeline**) لفحص قاعدة بيانات المتجر، وتتبع أداء الأنشطة التجارية المختلفة، وحساب إجمالي الإيرادات، ومتوسط قيمة الطلب (**Avg Order Value - AOV**) بدقة، إضافة إلى تحليل سلوك الدفع والمخزون الحرج لتوجيه القرارات الاستراتيجية.
+يهدف هذا المشروع إلى بناء خط استعلام ذكي لفحص قاعدة بيانات المتجر، وتتبع أداء الأنشطة التجارية المختلفة، وحساب إجمالي الإيرادات، ومتوسط قيمة الطلب، إضافة إلى تحليل سلوك الدفع والمخزون الحرج لتوجيه القرارات الاستراتيجية.
 
 ---
 
-## 🛠️ 2. بنية قاعدة البيانات والعلاقات (Database Schema)
+## 💻 2. عينة من المحرك التحليلي (Analytical Engine Sample)
 
-تم إنشاء قاعدة البيانات وتصميم الهيكل على **SQL Server** مع الاعتماد على العلاقات المباشرة (**Foreign Keys**) لضمان سلامة البيانات:
-
-* **جدول العملاء (`Customers`):** CustomerID, FullName, City, Phone
-* **جدول المنتجات (`Products`):** ProductID, ProductName, Category, Price, StockQuantity
-* **جدول الطلبات (`Orders`):** OrderID, CustomerID, OrderDate, PaymentMethod, OrderStatus
-* **جدول تفاصيل الطلبات (`OrderDetails`):** OrderDetailID, OrderID, ProductID, Quantity, UnitPrice
-
-<details>
-<summary><b>إظهار كود إنشاء الجداول (DDL Code)</b></summary>
-
-```sql
--- 1. إنشاء جدول العملاء (Customers)
-CREATE TABLE Customers (
-    CustomerID INT PRIMARY KEY,
-    FullName NVARCHAR(100) NOT NULL,
-    City NVARCHAR(50) NOT NULL,
-    Phone VARCHAR(20)
-);
-
--- 2. إنشاء جدول المنتجات (Products)
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName NVARCHAR(100) NOT NULL,
-    Category NVARCHAR(50) NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-    StockQuantity INT NOT NULL
-);
-
--- 3. إنشاء جدول الطلبات (Orders)
-CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
-    CustomerID INT,
-    OrderDate DATE NOT NULL,
-    PaymentMethod VARCHAR(30) NOT NULL,
-    OrderStatus VARCHAR(20) NOT NULL,
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
-);
-
--- 4. إنشاء جدول تفاصيل الطلبات (OrderDetails)
-CREATE TABLE OrderDetails (
-    OrderDetailID INT PRIMARY KEY,
-    OrderID INT,
-    ProductID INT,
-    Quantity INT NOT NULL,
-    UnitPrice DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
-);
-```
-</details>
-
----
-
-## 📈 3. الاستعلامات التحليلية والنتائج المصورة (Analytical Queries & Results)
-
-### 📊 الاستعلام 1: إجمالي المبيعات والإيرادات ومتوسط الطلب للطلبات المكتملة
-
-**الهدف:** حساب المؤشرات الرئيسية للأداء (KPIs) شاملة عدد الطلبات المكتملة، إجمالي الإيرادات، ومتوسط قيمة الطلب (AOV).
+> **نبذة برمجية:** يعتمد المشروع بالكامل على T-SQL. هذا هو الاستعلام الأساسي الذي تم استخدامه لاستخراج مؤشرات الأداء الرئيسية (KPIs) من قاعدة البيانات:
 
 ```sql
 SELECT 
@@ -85,126 +28,62 @@ JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
 WHERE Orders.OrderStatus = 'Completed';
 ```
 
-<p align="center">
-  <img src="images/01_kpi_summary.png" alt="إجمالي المبيعات والإيرادات ومتوسط الطلب" width="85%"/>
-</p>
+---
 
-> **💡 إضاءة تحليلية:** بلغ إجمالي الطلبات الناجحة 16 طلباً بمتوسط قيمة طلب ينعكس بشكل إيجابي على متوسط السلة الشراء للمتجر.
+## 📈 3. لوحات القيادة والنتائج التحليلية (Dashboards & Results)
+
+### 📊 1. ملخص الأداء والمبيعات للطلبات المكتملة
+<p align="center">
+  <img src="Screen%20Shoot/WhatsApp%20Image%202026-07-24%20at%2012.12.46%20AM.jpeg" alt="إجمالي المبيعات والإيرادات ومتوسط الطلب" width="85%"/>
+</p>
+> **💡 إضاءة تحليلية:** بلغ إجمالي الطلبات الناجحة 16 طلباً بإجمالي إيرادات يتجاوز 30 ألف ريال، ومتوسط قيمة طلب (1908 ريال) ينعكس بشكل إيجابي على حجم سلة الشراء للمتجر.
 
 ---
 
-### 💳 الاستعلام 2: تحليل المبيعات وعدد الطلبات حسب طريقة الدفع
-
-**الهدف:** تحديد طرق الدفع الأكثر استخداماً وتحقيقاً للإيرادات لتوجيه اتفاقيات بوابة الدفع وتحسين تجربة المستخدم.
-
-```sql
-SELECT 
-    Orders.PaymentMethod,
-    COUNT(DISTINCT Orders.OrderID) AS Total_Orders,
-    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Sales_SAR
-FROM Orders
-JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
-WHERE Orders.OrderStatus = 'Completed'
-GROUP BY Orders.PaymentMethod
-ORDER BY Total_Sales_SAR DESC;
-```
-
+### 💳 2. تحليل أداء المبيعات حسب طريقة الدفع
 <p align="center">
-  <img src="images/02_payment_methods.png" alt="تحليل المبيعات حسب طريقة الدفع" width="85%"/>
+  <img src="Screen%20Shoot/WhatsApp%20Image%202026-07-24%20at%2012.18.45%20AM.jpeg" alt="تحليل المبيعات حسب طريقة الدفع" width="85%"/>
 </p>
-
-> **💡 إضاءة تحليلية:** تُظهر البيانات تفضيل العميل للحلول المحلية والذكية مثل **STC Pay** و **مدى (Mada)** كأعلى حصة مبيعات.
+> **💡 إضاءة تحليلية:** تُظهر البيانات تفضيلاً واضحاً من العملاء للحلول الرقمية والمحلية مثل **STC Pay** و **مدى (Mada)**، حيث استحوذتا على أعلى حصة من المبيعات.
 
 ---
 
-### 🏆 الاستعلام 3: أفضل 5 منتجات مبيعاً وتحقيقاً للإيرادات
-
-**الهدف:** تحديد المنتجات القيادية (Best-Sellers) لدعم الحملات التسويقية وإدارة المخزون بشكل فعّال.
-
-```sql
-SELECT TOP 5
-    Products.ProductName,
-    Products.Category,
-    SUM(OrderDetails.Quantity) AS Total_Units_Sold,
-    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Revenue
-FROM OrderDetails
-JOIN Products ON OrderDetails.ProductID = Products.ProductID
-JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
-WHERE Orders.OrderStatus = 'Completed'
-GROUP BY Products.ProductName, Products.Category
-ORDER BY Total_Units_Sold DESC;
-```
-
+### 🏆 3. تقرير أداء أفضل 5 منتجات مبيعاً
 <p align="center">
-  <img src="images/03_top_products.png" alt="أفضل 5 منتجات مبيعاً" width="85%"/>
+  <img src="Screen%20Shoot/WhatsApp%20Image%202026-07-24%20at%2011.32.17%20PM.jpeg" alt="أفضل 5 منتجات مبيعاً" width="85%"/>
 </p>
-
-> **💡 إضاءة تحليلية:** تتصدر فئة الإلكترونيات المبيعات من حيث قيمة الإيراد، بينما تسجل العطور والأزياء حجماً ممتازاً في عدد الوحدات المباعة.
+> **💡 إضاءة تحليلية:** يتصدر "آيفون 15 برو ماكس" قائمة الإيرادات بفضل قيمته العالية، بينما يسجل "قميص مانشستر" أعلى معدل دوران من حيث إجمالي الوحدات المباعة.
 
 ---
 
-### ⚠️ الاستعلام 4: المنتجات التي تتطلب إعادة طلب (تحذير المخزون المنخفض <= 30)
-
-**الهدف:** التنبؤ بنقص المخزون وتحديد المنتجات الحرجة لمنع انقطاع السلع المباعة.
-
-```sql
-SELECT 
-    Products.ProductID,
-    Products.ProductName,
-    Products.Category,
-    Products.StockQuantity,
-    Products.Price
-FROM Products
-WHERE Products.StockQuantity <= 30
-ORDER BY Products.StockQuantity ASC;
-```
-
+### ⚠️ 4. المنتجات التي تتطلب إعادة طلب (المخزون المنخفض)
 <p align="center">
-  <img src="images/04_low_stock_alerts.png" alt="المنتجات التي تتطلب إعادة طلب" width="85%"/>
+  <img src="Screen%20Shoot/WhatsApp%20Image%202026-07-24%20at%2012.35.40%20AM.jpeg" alt="المنتجات التي تتطلب إعادة طلب" width="85%"/>
 </p>
-
-> **💡 إضاءة تحليلية:** أظهر الاستعلام تنبيهاً لعدة منتجات وصلت للحد الحرج (مثل التلفزيونات والأجهزة المنزلية) مما يستدعي طلب توريد عاجل.
+> **💡 إضاءة تحليلية:** تم تصميم تنبيه آلي للسلع التي قاربت على النفاد (مثل الشاشات وماكينات القهوة)، مما يستدعي إصدار أوامر توريد عاجلة لمنع أي توقف في المبيعات.
 
 ---
 
-### 👑 الاستعلام 5: تحليل كبار العملاء من حيث إجمالي المشتريات (VIP Customers)
-
-**الهدف:** التعرف على شريحة العملاء الأكثر ربحية لتقديم برنامج ولاء مخصص وتجربة استثنائية.
-
-```sql
-SELECT TOP 5
-    Customers.FullName,
-    Customers.City,
-    COUNT(DISTINCT Orders.OrderID) AS Total_Orders,
-    CONCAT(SUM(OrderDetails.Quantity * OrderDetails.UnitPrice), ' SAR') AS Total_Spent
-FROM Customers
-JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
-WHERE Orders.OrderStatus = 'Completed'
-GROUP BY Customers.FullName, Customers.City
-ORDER BY SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) DESC;
-```
-
+### 👑 5. تحليل كبار العملاء من حيث إجمالي المشتريات (Top 5 VIPs)
 <p align="center">
-  <img src="images/05_top_vip_customers.png" alt="تحليل كبار العملاء" width="85%"/>
+  <img src="Screen%20Shoot/WhatsApp%20Image%202026-07-24%20at%2012.48.29%20AM.jpeg" alt="تحليل كبار العملاء" width="85%"/>
 </p>
-
-> **💡 إضاءة تحليلية:** تركز الجهد الشرائي الأكبر في المدن الرئيسية (الرياض، تبوك، جدة) مما يدعم توجه تخصيص حملات استهداف جغرافية.
+> **💡 إضاءة تحليلية:** يتصدر العميل "أحمد العتيبي" قائمة كبار العملاء بإنفاق بلغ 6,500 ريال، مع تركز القوة الشرائية بشكل عام في مدينتي الرياض وتبوك.
 
 ---
 
-## 🎯 4. التوصيات الإستراتيجية المبنية على البيانات (Data-Driven Recommendations)
+## 🎯 4. التوصيات الإستراتيجية (Strategic Recommendations)
 
-1. **التركيز على وسائل الدفع الأكثر شيوعاً:** استمرار دعم وتسهيل خيارات **STC Pay** و **مدى** وتجهيز خصومات حصريّة لمستخدميها.
-2. **إدارة المخزون والتنبيه الآلي:** تفعيل تنبيه آلي عند انخفاض الكمية عن 30 قطعة لمنع خسارة أي فرص مبيعات.
-3. **برامج ولاء لكبار العملاء (VIP Retention):** تقديم عروض خاصة ومخصصة لأعلى العملاء إنفاقاً للحفاظ على استمرارية الشراء.
+* **الشراكات المالية:** التركيز على إطلاق عروض حصرية لمستخدمي **STC Pay** لتعزيز المبيعات نظراً لكونها وسيلة الدفع المفضلة.
+* **إدارة المخزون:** تفعيل نظام "إعادة الطلب التلقائي" للفئات سريعة الدوران بمجرد وصول المخزون إلى 30 قطعة.
+* **برامج الولاء:** تصميم برنامج VIP مخصص للعملاء المتصدرين للقائمة لضمان استمراريتهم وتعزيز ولائهم للعلامة التجارية.
 
 ---
 
 ## 💻 5. التقنيات والأدوات المستخدمة (Tech Stack)
 
 * **Database Engine:** SQL Server (SSMS / T-SQL)
-* **SQL Concepts Used:** DDL/DML, Relational Integrity, `JOINs`, Aggregate Functions (`SUM`, `COUNT`), Grouping & Sorting (`GROUP BY`, `ORDER BY`), Data Formatting (`CONCAT`, `CAST`).
-* **Documentation & Presentation:** GitHub Markdown with HTML Embedded Visuals.
+* **Data Visualization & Dashboards:** Power BI / Excel Advanced Charting
+* **SQL Concepts:** Relational Integrity, `JOINs`, Aggregate Functions, Grouping & Sorting.
 
 </div>
