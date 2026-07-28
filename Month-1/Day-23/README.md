@@ -69,9 +69,7 @@ ORDER BY price DESC;
 
 ### 🖥️ لوحة المتابعة والتحليل (Interactive Analytics Dashboard)
 
-> 📌 **ملاحظة:** تأكد من حفظ صورة الداشبورد باسم `Kingdom_Dates_Dashboard.png` في نفس مجلد المشروع لكي تظهر هنا مباشرة.
-
-![Kingdom Dates Pricing Dashboard](Kingdom_Dates_Dashboard.png)
+![Kingdom Dates Pricing Dashboard](./WhatsApp%20Image%202026-07-28%20at%203.46.18%20AM.jpeg)
 
 ---
 
