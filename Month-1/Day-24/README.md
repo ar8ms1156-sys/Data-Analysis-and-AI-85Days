@@ -94,7 +94,7 @@ ORDER BY
 
 ### 🖥️ لوحة المتابعة والتحليل (Executive Analytics Dashboard)
 
-![VIP Customer Analytics Dashboard](./VIP_Customer_Analytics_Dashboard.png)
+![VIP Customer Analytics Dashboard](./WhatsApp%20Image%202026-07-30%20at%202.59.14%20AM.jpeg)
 
 ---
 
