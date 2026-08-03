@@ -230,7 +230,6 @@ INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmountSAR, Category) VA
 Select * from  Customers
 Select * from Orders
 
-
 -- 1) أكثر 5 المدن السعودية توليداً للمبيعات وإجمالي الإيرادات في المتجر
 select Top 5 c.City as [المدينة], count ( o.OrderID) as [عدد الطلبات] ,CONCAT(sum ( o.TotalAmountSAR ) , '  SAR' )  as [اجمالي المبيعات بالريال ] from Customers c
 inner join Orders o 
@@ -276,25 +275,4 @@ group by c.City
 having avg ( o.TotalAmountSAR ) > ( Select avg ( TotalAmountSAR ) from Orders ) 
 order by AVG ( o.TotalAmountSAR ) desc ;
 
--- 5) تصنيف العملاء إلى شرائح تسويقية (VIP, High, Medium, Low) بناءً على إجمالي الإنفاق باستعمال CASE WHEN
-SELECT 
-    CASE 
-        WHEN o.TotalAmountSAR >= 4000 THEN 'VIP Customer'
-        WHEN o.TotalAmountSAR >= 2500 THEN 'High Spender'
-        WHEN o.TotalAmountSAR >= 1000 THEN 'Medium Spender'
-        ELSE 'Low Spender'
-    END AS [شريحة العميل],
-    COUNT(c.CustomerID) AS [عدد العملاء],
-    CONCAT(CAST(SUM(o.TotalAmountSAR) AS DECIMAL(10,2)), ' SAR') AS [إجمالي مبيعات الشريحة]
-FROM Customers c
-INNER JOIN Orders o 
-    ON c.CustomerID = o.CustomerID
-GROUP BY 
-    CASE 
-        WHEN o.TotalAmountSAR >= 4000 THEN 'VIP Customer'
-        WHEN o.TotalAmountSAR >= 2500 THEN 'High Spender'
-        WHEN o.TotalAmountSAR >= 1000 THEN 'Medium Spender'
-        ELSE 'Low Spender'
-    END
-ORDER BY 
-    SUM(o.TotalAmountSAR) DESC;
+
