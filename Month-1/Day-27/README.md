@@ -33,14 +33,13 @@
 
 ![Picture 1](./Pictures/Picture%201.png)
 
-كود الاستعلام (T-SQL):
-SELECT 
-    COUNT(*) AS total_orders,
-    SUM(CASE WHEN status = N'مكتمل' THEN 1 ELSE 0 END) AS completed_orders,
-    SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) AS cancelled_orders,
-    CONCAT(SUM(CASE WHEN status = N'ملغي' THEN order_amount ELSE 0 END), ' SAR') AS total_lost_revenue,
-    CONCAT(CAST(SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)), ' %') AS cancellation_rate
-FROM orders;
+    SELECT 
+        COUNT(*) AS total_orders,
+        SUM(CASE WHEN status = N'مكتمل' THEN 1 ELSE 0 END) AS completed_orders,
+        SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) AS cancelled_orders,
+        CONCAT(SUM(CASE WHEN status = N'ملغي' THEN order_amount ELSE 0 END), ' SAR') AS total_lost_revenue,
+        CONCAT(CAST(SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)), ' %') AS cancellation_rate
+    FROM orders;
 
 * النتائج الأسبوعية/الشهرية:
   - إجمالي الطلبات: 100 طلب.
@@ -58,16 +57,15 @@ FROM orders;
 
 ![Picture 2](./Pictures/Picture%202.png)
 
-كود الاستعلام (T-SQL):
-SELECT 
-    c.city,
-    COUNT(o.order_id) AS Total_orders,
-    CONCAT(SUM(CASE WHEN status = N'ملغي' THEN o.order_amount ELSE 0 END), ' SAR') AS city_lost_revenue,
-    CONCAT(CAST(SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) * 100.0 / COUNT(o.order_id) AS DECIMAL(5,2)), ' %') AS city_cancellation_rate
-FROM orders o
-JOIN customers c ON o.customer_id = c.customer_id
-GROUP BY c.city
-ORDER BY city_cancellation_rate DESC;
+    SELECT 
+        c.city,
+        COUNT(o.order_id) AS Total_orders,
+        CONCAT(SUM(CASE WHEN status = N'ملغي' THEN o.order_amount ELSE 0 END), ' SAR') AS city_lost_revenue,
+        CONCAT(CAST(SUM(CASE WHEN status = N'ملغي' THEN 1 ELSE 0 END) * 100.0 / COUNT(o.order_id) AS DECIMAL(5,2)), ' %') AS city_cancellation_rate
+    FROM orders o
+    JOIN customers c ON o.customer_id = c.customer_id
+    GROUP BY c.city
+    ORDER BY city_cancellation_rate DESC;
 
 * أبرز نتائج المدن:
   1. تبوك: نسبة إلغاء 66.00% (خسائر: 228.00 SAR من أصل 3 طلبات).
@@ -85,17 +83,16 @@ ORDER BY city_cancellation_rate DESC;
 
 ![Picture 3](./Pictures/Picture%203.png)
 
-كود الاستعلام (T-SQL):
-SELECT TOP 5
-    r.restaurant_name,
-    r.city,
-    COUNT(o.order_id) AS total_cancelled_orders,
-    CONCAT(SUM(o.order_amount), ' SAR') AS lost_revenue
-FROM orders o
-JOIN restaurants r ON o.restaurant_id = r.restaurant_id
-WHERE o.status = N'ملغي'
-GROUP BY r.restaurant_name, r.city
-ORDER BY total_cancelled_orders DESC, SUM(o.order_amount) DESC;
+    SELECT TOP 5
+        r.restaurant_name,
+        r.city,
+        COUNT(o.order_id) AS total_cancelled_orders,
+        CONCAT(SUM(o.order_amount), ' SAR') AS lost_revenue
+    FROM orders o
+    JOIN restaurants r ON o.restaurant_id = r.restaurant_id
+    WHERE o.status = N'ملغي'
+    GROUP BY r.restaurant_name, r.city
+    ORDER BY total_cancelled_orders DESC, SUM(o.order_amount) DESC;
 
 * قائمة أعلى المطاعم تسبباً في الإلغاء:
   1. مطعم وحنيذ الجنوب (أبها): 2 طلبات ملغاة | خسائر: 310.00 SAR.
@@ -113,18 +110,17 @@ ORDER BY total_cancelled_orders DESC, SUM(o.order_amount) DESC;
 
 ![Picture 4](./Pictures/Picture%204.png)
 
-كود الاستعلام (T-SQL):
-SELECT 
-    d.driver_name,
-    d.vehicle_type,
-    d.city,
-    COUNT(o.order_id) AS total_Cancelled_Orders,
-    CONCAT(SUM(o.order_amount), ' SAR') AS lost_revenues
-FROM orders o
-JOIN drivers d ON o.driver_id = d.driver_id
-WHERE o.status = N'ملغي' AND o.cancelled_by = N'السائق'
-GROUP BY d.driver_name, d.vehicle_type, d.city
-ORDER BY total_Cancelled_Orders DESC, SUM(o.order_amount) DESC;
+    SELECT 
+        d.driver_name,
+        d.vehicle_type,
+        d.city,
+        COUNT(o.order_id) AS total_Cancelled_Orders,
+        CONCAT(SUM(o.order_amount), ' SAR') AS lost_revenues
+    FROM orders o
+    JOIN drivers d ON o.driver_id = d.driver_id
+    WHERE o.status = N'ملغي' AND o.cancelled_by = N'السائق'
+    GROUP BY d.driver_name, d.vehicle_type, d.city
+    ORDER BY total_Cancelled_Orders DESC, SUM(o.order_amount) DESC;
 
 * جدول السائقين الأكثر تسبباً في الإلغاء المباشر:
   1. حسام التميمي (سيارة - الرياض): 1 طلب ملغى | خسارة: 115.00 SAR.
@@ -141,16 +137,15 @@ ORDER BY total_Cancelled_Orders DESC, SUM(o.order_amount) DESC;
 
 ![Picture 5](./Pictures/Picture%205.png)
 
-كود الاستعلام (T-SQL):
-SELECT 
-    c.complaint_status,
-    COUNT(c.complaint_id) AS total_complaints,
-    CONCAT(SUM(o.order_amount), ' SAR') AS total_complaint_orders_value,
-    CONCAT(CAST(COUNT(c.complaint_id) * 100.0 / (SELECT COUNT(*) FROM complaints) AS DECIMAL(5,2)), ' %') AS percentage_of_total_complaints
-FROM complaints c
-JOIN orders o ON c.order_id = o.order_id
-GROUP BY c.complaint_status
-ORDER BY total_complaints DESC;
+    SELECT 
+        c.complaint_status,
+        COUNT(c.complaint_id) AS total_complaints,
+        CONCAT(SUM(o.order_amount), ' SAR') AS total_complaint_orders_value,
+        CONCAT(CAST(COUNT(c.complaint_id) * 100.0 / (SELECT COUNT(*) FROM complaints) AS DECIMAL(5,2)), ' %') AS percentage_of_total_complaints
+    FROM complaints c
+    JOIN orders o ON c.order_id = o.order_id
+    GROUP BY c.complaint_status
+    ORDER BY total_complaints DESC;
 
 * تفاصيل حالات الشكاوى:
   1. مغلقة (Closed): 71 شكوى | نسبة: 71.00% | قيمة الطلبات المرتبطة: 7,193.00 SAR.
