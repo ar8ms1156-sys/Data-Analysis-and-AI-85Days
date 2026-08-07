@@ -31,6 +31,8 @@
 ### 📈 المحور الأول: حساب نسبة الإلغاء الكلية، ومعدل نجاح الطلبات، وإجمالي الخسائر المالية
 يهدف هذا الاستعلام إلى استخراج مؤشرات الأداء الرئيسية (KPIs) لتقييم الصحة التشغيلية للمتجر.
 
+![Picture 1](./Pictures/Picture%201.png)
+
 كود الاستعلام (T-SQL):
 SELECT 
     COUNT(*) AS total_orders,
@@ -53,6 +55,8 @@ FROM orders;
 
 ### 🏙️ المحور الثاني: تحليل معدلات الإلغاء والخسائر المالية المترتبة عليها حسب كل مدينة
 استعلام يحدد المدن الأكثر نزيفاً للإيرادات لتوجيه عمليات الدعم والرقابة اللوجستية.
+
+![Picture 2](./Pictures/Picture%202.png)
 
 كود الاستعلام (T-SQL):
 SELECT 
@@ -78,6 +82,8 @@ ORDER BY city_cancellation_rate DESC;
 
 ### 🍽️ المحور الثالث: أكثر 5 مطاعم تسبباً في إلغاء الطلبات والخسائر المالية
 استعلام لتحديد شركاء المطاعم الأكثر تسبباً في إلغاء العمليات بسبب التأخير أو نفاد الوجبات.
+
+![Picture 3](./Pictures/Picture%203.png)
 
 كود الاستعلام (T-SQL):
 SELECT TOP 5
@@ -105,6 +111,8 @@ ORDER BY total_cancelled_orders DESC, SUM(o.order_amount) DESC;
 ### 🛵 المحور الرابع: أكثر السائقين (الكباتن) تسبباً في إلغاء الطلبات والخسائر
 استعلام يحلل سلوك التوصيل والتأخير الناتج عن السائقين حسب مركباتهم ومدنهم.
 
+![Picture 4](./Pictures/Picture%204.png)
+
 كود الاستعلام (T-SQL):
 SELECT 
     d.driver_name,
@@ -130,6 +138,8 @@ ORDER BY total_Cancelled_Orders DESC, SUM(o.order_amount) DESC;
 
 ### 📑 المحور الخامس: تحليل حالات الشكاوى المرفوعة على الطلبات وحجم الخسائر
 استعلام لحصر الشكاوى المترتبة على الطلبات ونسب توزيع حالات معالجتها.
+
+![Picture 5](./Pictures/Picture%205.png)
 
 كود الاستعلام (T-SQL):
 SELECT 
@@ -169,3 +179,4 @@ ORDER BY total_complaints DESC;
 * Engine & Queries: Microsoft SQL Server Management Studio (SSMS) / T-SQL.
 * SQL Capabilities Applied: Advanced Joins (INNER JOIN), Aggregations (SUM, COUNT), Conditional Logic (CASE WHEN), Subqueries, Grouping & Filtering (GROUP BY, HAVING, WHERE), Sorting (ORDER BY), and Formatting functions (CONCAT, CAST).
 * Design & Dashboarding: Custom Dark-Gold Visual Analytics Dashboard Layouts.
+*
