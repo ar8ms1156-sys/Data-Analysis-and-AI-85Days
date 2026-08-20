@@ -1,10 +1,10 @@
-# 🇸🇦 Saudi E-Commerce Sales Performance Dashboard | Power BI Analytics
+# <img src="https://flagcdn.com/w40/sa.png" width="30" valign="middle"> Saudi E-Commerce Sales Performance Dashboard | Power BI Analytics
 
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Power Query](https://img.shields.io/badge/Power_Query-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![DAX](https://img.shields.io/badge/DAX_Measures-0176D3?style=for-the-badge&logo=powerbi&logoColor=white)
 ![Data Analytics](https://img.shields.io/badge/Data_Analytics-008080?style=for-the-badge&logo=datadog&logoColor=white)
-![Saudi Market](https://img.shields.io/badge/Market-Saudi_Arabia_🇸🇦-green?style=for-the-badge)
+![Saudi Market](https://img.shields.io/badge/Market-Saudi_Arabia-138808?style=for-the-badge)
 
 ---
 
