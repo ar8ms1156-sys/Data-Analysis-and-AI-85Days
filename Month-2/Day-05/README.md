@@ -1,9 +1,9 @@
-# 🇸🇦 Saudi Retail & E-Commerce Performance Dashboard | Power BI Analytics
+# Saudi Retail & E-Commerce Performance Dashboard | Power BI Analytics
 
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Power Query](https://img.shields.io/badge/Power_Query-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![DAX](https://img.shields.io/badge/DAX-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![Saudi Arabia Market](https://img.shields.io/badge/Market-Saudi_Arabia_🇸🇦-006C35?style=for-the-badge)
+![Saudi Arabia Market](https://img.shields.io/badge/Market-Saudi_Arabia-006C35?style=for-the-badge)
 
 ---
 
@@ -18,7 +18,7 @@
 
 > **ملاحظة تقنية:** تتميز اللوحة بربط ديناميكي كامل (**Cross-Filtering & Dynamic Slicing**)، حيث تتحديث جميع المؤشرات والخريطة الجغرافية والرسوم البيانية فور التصفية حسب الفئة المستهدفة.
 
-![Saudi Arabia Sales Dashboard](./Screenshot.png)
+![Saudi Arabia Sales Dashboard](./Screenshot%202026-08-22%20020640.png)
 
 ---
 
