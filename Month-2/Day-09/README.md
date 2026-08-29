@@ -20,7 +20,7 @@
 
 > **ملاحظة:** اللوحة مدعومة بتصفية تفاعلية كاملة (`Dynamic Cross-Filtering`) عبر شرائح التصفية (`Slicers`) لتخصيص التحليل حسب **السنة** أو **نوع السياحة (داخلي / وافد)** مع تحديث لحظي للخرائط الجغرافية والرسوم البيانية.
 
-![Saudi Tourism 360 Dashboard Preview](./Saudi%20Tourism%20360%20-%20Executive%20Performance%20and%20Spending%20Intelligence.png)
+![Saudi Tourism 360 Dashboard Preview](./Screenshot%202026-08-29%20194529.png)
 
 ---
 
@@ -57,37 +57,33 @@
 
 ### 1. معالجة البيانات (Power Query ETL)
 * تنظيف وحذف القيم المفقودة والمتكررة.
-* توحيد العملات وتطبيط أنواع البيانات (`Data Types`).
+* توحيد العملات وتعديل أنواع البيانات (`Data Types`).
 * دمج وجلب البيانات الجغرافية لتحسين دقة خرائط الـ Map Visuals.
 
 ### 2. نمذجة البيانات (Star Schema Architecture)
 تم ربط جدول الحقائق الرئيسي بجدول الأبعاد المخصصة:
-* **`Fact_TourismPerformance`**: يحتوي على أرقام الإنفاق، الزوار، والليالي.
+* **`Fact_Tourism`**: يحتوي على أرقام الإنفاق، الزوار، والليالي السياحية.
 * **`Dim_City` / `Dim_Region`**: لتنظيم التوزيع الجغرافي والمناطق.
 * **`Dim_TourismType`**: للتصنيف (داخلي / وافد).
 * **`Dim_Date`**: للتتبع الزمني والسلاسل الزمنية.
 
-### 3. أهم صيغ DAX المخصصة (Key DAX Measures)
+### 3. صيغ DAX المخصصة في المشروع (Project DAX Measures)
 
 ```dax
-// 1. Total Spending Calculation (SAR)
-Total Spending = SUM(Fact_TourismPerformance[Spending_Amount])
+// 1. Total Spending Calculation (SAR Mn)
+Total Spending (SAR Mn) = SUM(Fact_Tourism[Spending_SAR_Mn])
 
-// 2. Average Trip Spending Calculation
-Avg Trip Spending = 
-DIVIDE(
-    [Total Spending], 
-    SUM(Fact_TourismPerformance[Visitors_Count]), 
-    0
-)
+// 2. Total Visitors Calculation (000)
+Total Visitors (000) = SUM(Fact_Tourism[Visitors_Thousands])
 
-// 3. Average Length of Stay (Nights)
-Avg Length of Stay = 
-DIVIDE(
-    SUM(Fact_TourismPerformance[Overnight_Stays]), 
-    SUM(Fact_TourismPerformance[Visitors_Count]), 
-    0
-)
+// 3. Total Overnight Stays Calculation (000)
+Total Overnight Stays (000) = SUM(Fact_Tourism[Overnight_Stays_Thousands])
+
+// 4. Average Trip Spending Calculation (SAR)
+Avg Trip Spending (SAR) = AVERAGE(Fact_Tourism[Avg_Spending_Per_Trip])
+
+// 5. Average Length of Stay Calculation (Night)
+Avg Length of Stay (Night) = AVERAGE(Fact_Tourism[Avg_Length_of_Stay])
 ```
 
 ---
