@@ -7,7 +7,7 @@
 ---
 ## 📌 1. الملخص التنفيذي (Executive Summary)
 تزامناً مع التوسع السريع لقطاع الضيافة والأغذية في مدينة الرياض وضمن أهداف **رؤية المملكة 2030** لتقليل الهدر والاستدامة المالية، يقدم هذا المشروع نموذجاً تحليلياً برمجياً بـ **Python** لتنبؤ كميات الوجبات اليومية المطلوبة لسلسلة مطاعم تجارية.
-يهدف المشروع إلى حل المعادلة الصعبة بين **تجنب نفاد الوجبات (Out-of-Stock)** خلال أوقات الذروة، و**تقليل الهدر الغذائي (Food Waste)** في الأيام الهادئة عبر إدراج هامش أمان متوازن (Safety Stock) يعتمد على تحليل السلاسل الزمنية لمبيعات الوجبات.
+يهدف المشروع إلى حل المعادلة الصعبة بين **تجنب نفاد الوجبات (Out-of-Stock)** خلال أوقات الذروة، و**تقليل الهدر الغذائي (Food Waste)** في الأيام الهادئة عبر إدراج هامش أمان متوازن (Safety Stock) يعتمد على تحلیل السلاسل الزمنية لمبيعات الوجبات.
 ---
 ## 📊 2. ملخص مؤشرات الأداء الرئيسية (KPIs Summary)
 جدول تحليلي يوضح توزيع مبيعات الأسبوع ومؤشرات الأداء المستخرجة عبر خوارزمية بايثون:
@@ -29,8 +29,7 @@
 ## 🛠️ 4. البنية البرمجية والهيكلية (Python Implementation & Logic)
 تم بناء المشروع باستخدام **أساسيات Python البحتة (Core Python)** لضمان أقصى سرعة تنفيذ وفهم دقيق للخوارزمية الحسابية:
 ### الأسطر البرمجية الرئيسية (Core Script):
-import math
-# 1. إعداد داتا مبيعات الأسبوع (List of Dictionaries)
+// 1. إعداد داتا مبيعات الأسبوع (List of Dictionaries)
 sales_data = [
     {"day": "الأحد", "sales_sar": 1200, "meals_sold": 40},
     {"day": "الإثنين", "sales_sar": 1350, "meals_sold": 45},
@@ -40,10 +39,11 @@ sales_data = [
     {"day": "الجمعة", "sales_sar": 2550, "meals_sold": 85},
     {"day": "السبت", "sales_sar": 1800, "meals_sold": 60}
 ]
-# 2. حساب الإجمالي والمتوسط اليومي
+// 2. حساب الإجمالي والمتوسط اليومي
 total_meals = sum(day["meals_sold"] for day in sales_data)
 avg_daily_meals = total_meals / len(sales_data)
-# 3. تطبيق خوارزمية Newsvendor Logic وتقريب الناتج
+// 3. تطبيق خوارزمية Newsvendor Logic وتقريب الناتج
+import math
 recommended_prep = avg_daily_meals * 1.10
 final_prepared_meals = math.ceil(recommended_prep)
 print(f"الكمية الموصى بتحضيرها يومياً لتفادي الهدر: {final_prepared_meals} وجبة")
@@ -60,7 +60,7 @@ print(f"الكمية الموصى بتحضيرها يومياً لتفادي ا�
 * **Version Control:** Git & GitHub
 ---
 ## 🚀 7. كيفية تشغيل المشروع (How to Run)
-1. **قم بعمل Clone للمستودع:**
+1. **قم بعمل Clone للمستودع عبر الأمر التالي:**
 git clone https://github.com/YourUsername/Data-Analysis-and-AI-85Days.git
 2. **افتح ملف Jupyter Notebook:**
 انتقل إلى المجلد `Month-2/Day-13` وافتح الملف `Daily Meal Demand Analytics - Riyadh Chain.ipynb`.
