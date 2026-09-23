@@ -7,7 +7,7 @@
 ---
 ## 📌 1. الملخص التنفيذي (Executive Summary)
 تزامناً مع التوسع السريع لقطاع الضيافة والأغذية في مدينة الرياض وضمن أهداف **رؤية المملكة 2030** لتقليل الهدر والاستدامة المالية، يقدم هذا المشروع نموذجاً تحليلياً برمجياً بـ **Python** لتنبؤ كميات الوجبات اليومية المطلوبة لسلسلة مطاعم تجارية.
-يهدف المشروع إلى حل المعادلة الصعبة بين **تجنب نفاد الوجبات (Out-of-Stock)** خلال أوقات الذروة، و**تقليل الهدر الغذائي (Food Waste)** في الأيام الهادئة عبر إدراج هامش أمان متوازن (Safety Stock) يعتمد على تحلیل السلاسل الزمنية لمبيعات الوجبات.
+يهدف المشروع إلى حل المعادلة الصعبة بين **تجنب نفاد الوجبات (Out-of-Stock)** خلال أوقات الذروة، و**تقليل الهدر الغذائي (Food Waste)** في الأيام الهادئة عبر إدراج هامش أمان متوازن (Safety Stock) يعتمد على تحليل السلاسل الزمنية لمبيعات الوجبات.
 ---
 ## 📊 2. ملخص مؤشرات الأداء الرئيسية (KPIs Summary)
 جدول تحليلي يوضح توزيع مبيعات الأسبوع ومؤشرات الأداء المستخرجة عبر خوارزمية بايثون:
@@ -29,24 +29,24 @@
 ## 🛠️ 4. البنية البرمجية والهيكلية (Python Implementation & Logic)
 تم بناء المشروع باستخدام **أساسيات Python البحتة (Core Python)** لضمان أقصى سرعة تنفيذ وفهم دقيق للخوارزمية الحسابية:
 ### الأسطر البرمجية الرئيسية (Core Script):
-// 1. إعداد داتا مبيعات الأسبوع (List of Dictionaries)
+# 1. Dataset Setup (Sales Data in Riyadh)
 sales_data = [
-    {"day": "الأحد", "sales_sar": 1200, "meals_sold": 40},
-    {"day": "الإثنين", "sales_sar": 1350, "meals_sold": 45},
-    {"day": "الثلاثاء", "sales_sar": 1100, "meals_sold": 37},
-    {"day": "الأربعاء", "sales_sar": 1500, "meals_sold": 50},
-    {"day": "الخميس", "sales_sar": 2100, "meals_sold": 70},
-    {"day": "الجمعة", "sales_sar": 2550, "meals_sold": 85},
-    {"day": "السبت", "sales_sar": 1800, "meals_sold": 60}
+    {"day": "Sunday", "sales_sar": 1200, "meals_sold": 40},
+    {"day": "Monday", "sales_sar": 1350, "meals_sold": 45},
+    {"day": "Tuesday", "sales_sar": 1100, "meals_sold": 37},
+    {"day": "Wednesday", "sales_sar": 1500, "meals_sold": 50},
+    {"day": "Thursday", "sales_sar": 2100, "meals_sold": 70},
+    {"day": "Friday", "sales_sar": 2550, "meals_sold": 85},
+    {"day": "Saturday", "sales_sar": 1800, "meals_sold": 60}
 ]
-// 2. حساب الإجمالي والمتوسط اليومي
+# 2. Calculate Total Volume & Daily Average
 total_meals = sum(day["meals_sold"] for day in sales_data)
 avg_daily_meals = total_meals / len(sales_data)
-// 3. تطبيق خوارزمية Newsvendor Logic وتقريب الناتج
+# 3. Apply Newsvendor Logic (10% Safety Buffer & Ceiling Rounding)
 import math
 recommended_prep = avg_daily_meals * 1.10
 final_prepared_meals = math.ceil(recommended_prep)
-print(f"الكمية الموصى بتحضيرها يومياً لتفادي الهدر: {final_prepared_meals} وجبة")
+print(f"Recommended Daily Preparation Target: {final_prepared_meals} Meals")
 ---
 ## 🎯 5. التوصيات الاستراتيجية (Strategic Recommendations)
 1. **تطبيق Dynamic Safety Stock:** رفع هامش الأمان إلى **25%** يومي الخميس والجمعة، وخفضه إلى **5%** في أيام وسط الأسبوع (الأحد والثلاثاء) لرفع كفاءة الأرباح.
