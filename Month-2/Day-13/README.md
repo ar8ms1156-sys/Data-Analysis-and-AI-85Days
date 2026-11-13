@@ -22,11 +22,8 @@
 
 > **ملاحظة:** تم تصميم التقرير بنظام الجداول الذكية الديناميكية (Dynamic Excel Tables & Spill Arrays)، مما يضمن التحديث الفوري لكافة مؤشرات الأداء وإجماليات الفروع تلقائياً عند إضافة أي بيانات مبيعات جديدة.
 
-### أولاً: ملخص أداء فروع الرياض (Riyadh Branches Performance Summary)
+### ملخص أداء فروع الرياض (Riyadh Branches Performance Summary)
 ![Riyadh Branches Performance Summary](Screenshot/Screenshot%202026-11-13%20183558.png)
-
-### ثانياً: جدول البيانات التشغيلية والإيرادات اليومية (Operational Sales Table)
-![Riyadh Cloud Kitchen Sales Data](Screenshot/Screenshot%202026-11-13%20183400.png)
 
 ---
 
