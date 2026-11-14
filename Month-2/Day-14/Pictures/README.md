@@ -1,4 +1,4 @@
-# 🇸🇦 Salla E-Commerce Operational & Shipping Budget Variance Analytics | Executive Excel & Copilot Report
+# 🛒 Salla E-Commerce Operational & Shipping Budget Variance Analytics | Executive Excel & Copilot Report
 
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-365-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Microsoft Copilot](https://img.shields.io/badge/Microsoft-Copilot_AI-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
@@ -23,12 +23,12 @@
 ### أ. مرحلة البيانات الخام قبل التنظيف (Raw Unstructured Data — Before)
 تُظهر اللقطة التالية حالة البيانات الأولية قبل المعالجة، حيث احتوت على صفوف مكررة، تباين في صيغ التواريخ، نصوص مدمجة داخل الحقول الرقمية، قيم سالبة شاذة، وبيانات مفقودة:
 
-![Raw Data Before Cleaning](Pictures/Screenshot%202026-11-14%20154503.png)
+![Raw Data Before Cleaning](https://raw.githubusercontent.com/ar8ms1156-sys/Data-Analysis-and-AI-85Days/main/Month-2/Day-14/Pictures/Screenshot%202026-11-14%20154503.png)
 
 ### ب. مرحلة البيانات النظيفة ولوحة تحليل الفروق النهائية (Clean Data & Variance Dashboard — After)
 تُظهر اللقطة التالية النموذج النهائي بعد إزالة التكرارات، توحيد المعايير القياسية، تطبيق المعادلات الهيكلية الديناميكية، وتفعيل التنسيق الشرطي لتمييز الانحرافات المالية فوراً:
 
-![Clean Data & Executive Dashboard](Pictures/Screenshot%202026-11-14%20154438.png)
+![Clean Data & Executive Dashboard](https://raw.githubusercontent.com/ar8ms1156-sys/Data-Analysis-and-AI-85Days/main/Month-2/Day-14/Pictures/Screenshot%202026-11-14%20154438.png)
 
 ---
 
